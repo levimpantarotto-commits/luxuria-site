@@ -148,51 +148,33 @@ function ligarRolagem(){
 
 /* --------------------------------------------------------------------------
    5. Abertura
+   Sem cortina de carregamento (o Levi pediu pra tirar, 17/08). A página já
+   nasce visível; o conteúdo do topo entra em cascata, sem prender ninguém.
    -------------------------------------------------------------------------- */
 function abertura(){
-  const cortina = document.getElementById("cortina");
   const mostrarFlutuante = () => document.querySelector(".flutua").classList.add("viva");
 
   if(!window.gsap){
-    if(cortina) cortina.remove();
-    document.body.style.overflow = "";
     document.querySelectorAll(".mural figure").forEach(f => f.style.opacity = 1);
     mostrarFlutuante();
     return;
   }
 
-  document.body.style.overflow = "hidden";
+  const tl = gsap.timeline({ defaults:{ ease:"power3.out" },
+    onComplete(){ ScrollTrigger.refresh(); } });
 
-  const tl = gsap.timeline({
-    defaults:{ ease:"power3.out" },
-    onComplete(){
-      cortina && cortina.remove();
-      document.body.style.overflow = "";
-      ScrollTrigger.refresh();
-    }
-  });
-
-  /* aba em segundo plano pausa o requestAnimationFrame: passados 5s de relógio
-     real, pula pro fim pra cortina nunca ficar travada por cima da página */
-  setTimeout(() => { if(tl.progress() < 1) tl.progress(1); }, 5000);
-
-  tl.to(".cortina__brasao", { opacity:1, scale:1, duration:.7, startAt:{ scale:.88 }, ease:"power2.out" })
-    .to(".cortina__risco i", { scaleX:1, duration:.55, ease:"power2.inOut" }, "-=.25")
-    .to(".cortina", { yPercent:-100, duration:.85, ease:"power3.inOut" }, "+=.1")
-
-    /* mural de peças entra em cascata */
-    .fromTo(".mural figure", { opacity:0, y:34, scale:.96 },
-            { opacity:1, y:0, scale:1, duration:.75, stagger:.09, ease:"power3.out" }, "-=.45")
-
-    /* texto */
-    .fromTo("[data-letras]", { yPercent:110 }, { yPercent:0, duration:.6 }, "-=.9")
+  tl.fromTo(".mural figure", { opacity:0, y:30, scale:.97 },
+            { opacity:1, y:0, scale:1, duration:.7, stagger:.08 })
+    .fromTo("[data-letras]", { yPercent:110 }, { yPercent:0, duration:.5 }, "-=.5")
     .fromTo(".hero__titulo .linha > span", { yPercent:112 },
-            { yPercent:0, duration:.9, stagger:.09, ease:"power4.out" }, "-=.45")
-    .fromTo(".hero__sub", { opacity:0, y:20 }, { opacity:1, y:0, duration:.55 }, "-=.5")
-    .fromTo(".hero__acoes .btn", { opacity:0, y:20 },
-            { opacity:1, y:0, duration:.5, stagger:.08 }, "-=.35")
-    .fromTo(".hero__rodape > *", { opacity:0 }, { opacity:1, duration:.45, stagger:.1 }, "-=.3")
-    .add(mostrarFlutuante, "-=.25");
+            { yPercent:0, duration:.75, stagger:.07, ease:"power4.out" }, "-=.35")
+    .fromTo(".hero__sub", { opacity:0, y:18 }, { opacity:1, y:0, duration:.5 }, "-=.45")
+    .fromTo(".hero__acoes .btn", { opacity:0, y:18 },
+            { opacity:1, y:0, duration:.45, stagger:.07 }, "-=.3")
+    .fromTo(".hero__selos li", { opacity:0, y:14 },
+            { opacity:1, y:0, duration:.45, stagger:.07 }, "-=.3")
+    .fromTo(".hero__rodape > *", { opacity:0 }, { opacity:1, duration:.4, stagger:.08 }, "-=.25")
+    .add(mostrarFlutuante, "-=.2");
 }
 
 /* --------------------------------------------------------------------------
