@@ -4,26 +4,36 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Luxúria Imports — Moda masculina importada</title>
-<meta name="description" content="Luxúria Imports — moda masculina importada. Estilo, qualidade e atitude. Atendimento no WhatsApp e entrega para todo o Brasil.">
+<meta name="description" content="Luxúria Imports — camiseta, polo e boné importados. Atendimento no WhatsApp e envio para todo o Brasil.">
 <meta name="theme-color" content="#080707">
 
 <meta property="og:type" content="website">
 <meta property="og:title" content="Luxúria Imports — Moda masculina importada">
-<meta property="og:description" content="Estilo · Qualidade · Atitude. Entrega para todo o Brasil.">
+<meta property="og:description" content="Camiseta, polo e boné importados. Envio para todo o Brasil.">
 <meta property="og:image" content="assets/img/logo-luxuria.jpg">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<!-- UMA família só, em vários pesos e larguras. É o padrão de tipografia da marca
-     (ver Identidade_Visual.md da Luxúria) e o código visual do streetwear. -->
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@75..100,300..900&display=swap" rel="stylesheet">
+<!-- Permanent Marker no título (a mesma pegada da Loja dos Crias) + Archivo no resto -->
+<link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Archivo:wdth,wght@75..100,400..900&display=swap" rel="stylesheet">
 
-<link rel="stylesheet" href="assets/css/lx.css?v=2026081706">
+<link rel="stylesheet" href="assets/css/lx.css?v=2026081710">
 </head>
 <body>
 
-<div class="grao" aria-hidden="true"></div>
-<div class="vinheta" aria-hidden="true"></div>
+<!-- ============ FAIXA DE VANTAGENS ============ -->
+<div class="vantagens" aria-hidden="true">
+  <div class="vantagens__trilho">
+    <span class="vantagens__grupo">
+      <em>Envio para todo o Brasil</em><i>◆</i><em>Atendimento no WhatsApp</em><i>◆</i>
+      <em>Peça nova toda semana</em><i>◆</i><em>Retirada em Imbituba</em><i>◆</i>
+    </span>
+    <span class="vantagens__grupo">
+      <em>Envio para todo o Brasil</em><i>◆</i><em>Atendimento no WhatsApp</em><i>◆</i>
+      <em>Peça nova toda semana</em><i>◆</i><em>Retirada em Imbituba</em><i>◆</i>
+    </span>
+  </div>
+</div>
 
 <!-- ============ NAV ============ -->
 <header class="nav" id="nav">
@@ -34,12 +44,15 @@
 
   <nav class="nav__links" aria-label="Navegação principal">
     <a href="#categorias">Categorias</a>
-    <a href="#pecas">Destaques</a>
+    <a href="#pecas">Novidades</a>
     <a href="#comprar">Como comprar</a>
     <a href="#entrega">Entrega</a>
   </nav>
 
-  <a class="btn btn--nav" href="#" data-wa>WhatsApp</a>
+  <a class="nav__wa" href="#" data-wa>
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.86 9.86 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2Zm5.8 14.03c-.25.69-1.44 1.32-1.99 1.37-.53.05-1.02.24-3.44-.72-2.9-1.14-4.74-4.1-4.88-4.29-.14-.19-1.16-1.55-1.16-2.95 0-1.41.73-2.1.99-2.38.26-.29.57-.36.76-.36.19 0 .38 0 .55.01.18.01.41-.07.65.49.24.57.81 1.98.88 2.12.07.14.12.31.02.5-.09.19-.14.31-.28.47-.14.16-.29.36-.42.48-.14.14-.28.29-.12.57.16.29.71 1.17 1.53 1.9 1.05.94 1.94 1.23 2.22 1.37.28.14.44.12.6-.07.17-.19.7-.81.88-1.09.19-.29.38-.24.64-.14.26.09 1.66.78 1.95.93.28.14.47.21.54.33.07.12.07.69-.18 1.38Z"/></svg>
+    <span>Chamar no zap</span>
+  </a>
 
   <button class="nav__burguer" id="burguer" aria-label="Abrir menu" aria-expanded="false">
     <span></span><span></span>
@@ -48,107 +61,84 @@
 
 <div class="menu" id="menu" aria-hidden="true">
   <a href="#categorias">Categorias</a>
-  <a href="#pecas">Destaques</a>
+  <a href="#pecas">Novidades</a>
   <a href="#comprar">Como comprar</a>
   <a href="#entrega">Entrega</a>
-  <a class="menu__wa" href="#" data-wa>Falar no WhatsApp</a>
+  <a class="menu__wa" href="#" data-wa>Chamar no zap</a>
 </div>
 
 <main id="topo">
 
 <!-- ============ HERO ============ -->
-<!-- v3: o produto é o herói, não o brasão. Título encostado à esquerda,
-     mural de fotos ocupando a direita, sem centralizar nada. -->
 <section class="hero">
-  <div class="hero__aura" aria-hidden="true"></div>
-
-  <div class="hero__grade">
+  <div class="wrap hero__grade">
 
     <div class="hero__texto">
       <p class="hero__tag"><span data-letras>Chegou essa semana</span></p>
 
-      <h1 class="hero__titulo">
-        <span class="linha"><span>O que tu</span></span>
-        <span class="linha"><span>veste</span></span>
-        <span class="linha"><span><em>fala</em></span></span>
-      </h1>
+      <h1 class="hero__titulo">Camiseta de<br><em>marca</em> na faixa</h1>
 
       <p class="hero__sub">
-        Camiseta, polo e boné que não tem em qualquer lugar da cidade.
-        Chega coisa nova toda semana.
+        Camiseta, polo e boné importados, conferidos um a um.
+        Chega peça nova toda semana e sai pro Brasil inteiro.
       </p>
 
       <div class="hero__acoes">
-        <a class="btn btn--ouro" href="#" data-wa>Ver o que chegou</a>
-        <a class="btn btn--linha" href="#categorias">Todas as categorias</a>
+        <a class="btn btn--wa btn--grande" href="#" data-wa>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.86 9.86 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2Zm5.8 14.03c-.25.69-1.44 1.32-1.99 1.37-.53.05-1.02.24-3.44-.72-2.9-1.14-4.74-4.1-4.88-4.29-.14-.19-1.16-1.55-1.16-2.95 0-1.41.73-2.1.99-2.38.26-.29.57-.36.76-.36.19 0 .38 0 .55.01.18.01.41-.07.65.49.24.57.81 1.98.88 2.12.07.14.12.31.02.5-.09.19-.14.31-.28.47-.14.16-.29.36-.42.48-.14.14-.28.29-.12.57.16.29.71 1.17 1.53 1.9 1.05.94 1.94 1.23 2.22 1.37.28.14.44.12.6-.07.17-.19.7-.81.88-1.09.19-.29.38-.24.64-.14.26.09 1.66.78 1.95.93.28.14.47.21.54.33.07.12.07.69-.18 1.38Z"/></svg>
+          Ver o que chegou
+        </a>
+        <a class="btn btn--linha" href="#categorias">Categorias</a>
       </div>
 
       <ul class="hero__selos">
-        <li><strong>Todo o Brasil</strong><span>envio com rastreio</span></li>
-        <li><strong>No WhatsApp</strong><span>responde gente, não robô</span></li>
+        <li><strong>Brasil inteiro</strong><span>com rastreio</span></li>
+        <li><strong>Sem cadastro</strong><span>fecha no zap</span></li>
         <li><strong>Toda semana</strong><span>grade nova</span></li>
       </ul>
     </div>
 
-    <!-- mural: as peças de verdade, montado por lx.js a partir de PECAS -->
     <div class="mural" id="mural" aria-hidden="true"></div>
 
   </div>
-
-  <div class="hero__rodape">
-    <span class="hero__scroll" aria-hidden="true"><i></i></span>
-    <span class="hero__local">Imbituba · Santa Catarina</span>
-  </div>
 </section>
-
-<!-- ============ FAIXA ============ -->
-<div class="faixa" aria-hidden="true">
-  <div class="faixa__trilho">
-    <span class="faixa__grupo">
-      <em>Envio para todo o Brasil</em><i>◆</i><em>Atendimento no WhatsApp</em><i>◆</i>
-      <em>Tamanho conferido antes de enviar</em><i>◆</i><em>Novidade toda semana</em><i>◆</i>
-    </span>
-    <span class="faixa__grupo">
-      <em>Envio para todo o Brasil</em><i>◆</i><em>Atendimento no WhatsApp</em><i>◆</i>
-      <em>Tamanho conferido antes de enviar</em><i>◆</i><em>Novidade toda semana</em><i>◆</i>
-    </span>
-  </div>
-</div>
 
 <!-- ============ CATEGORIAS ============ -->
 <section class="secao" id="categorias">
   <div class="wrap">
     <header class="cabeca cabeca--centro">
-      <span class="cabeca__marca" data-rev>O que a gente tem</span>
-      <h2 class="cabeca__titulo" data-rev>Escolha por <em>categoria</em></h2>
+      <span class="cabeca__marca" data-rev>O que tem na loja</span>
+      <h2 class="cabeca__titulo" data-rev>Escolhe a <em>categoria</em></h2>
       <p class="cabeca__texto" data-rev>
-        Toca na categoria e a gente já abre a conversa com o que tem disponível dela agora.
+        Toca e a gente já abre o zap com o que tem dessa categoria agora.
       </p>
     </header>
-
-    <div class="categorias" id="categorias-grade">
-      <!-- injetado por lx.js -->
-    </div>
+    <div class="categorias" id="categorias-grade"><!-- lx.js --></div>
   </div>
 </section>
 
-<!-- ============ DESTAQUES ============ -->
-<section class="secao secao--fundo" id="pecas">
+<!-- ============ NOVIDADES ============ -->
+<section class="secao secao--gelo" id="pecas">
   <div class="wrap">
     <header class="cabeca">
-      <span class="cabeca__marca" data-rev>Seleção da semana</span>
-      <h2 class="cabeca__titulo" data-rev>O que está<br><em>saindo agora</em></h2>
+      <span class="cabeca__marca" data-rev>Chegou essa semana</span>
+      <h2 class="cabeca__titulo" data-rev>Novidades</h2>
       <p class="cabeca__texto" data-rev>
-        Grade curta e reposição semanal. Se algo aqui te pegou, chama que a gente
-        confere tamanho e disponibilidade na hora.
+        Grade curta e reposição toda semana. Gostou de alguma? Chama que a gente
+        confere tamanho na hora.
       </p>
     </header>
 
-    <div class="vitrine" id="vitrine"><!-- injetado por lx.js --></div>
+    <div class="vitrine" id="vitrine"><!-- lx.js --></div>
+
+    <div class="combo" data-rev>
+      <strong>Levou 3, sai mais barato</strong>
+      <span>Fecha o combo no zap e a gente ajusta o valor.</span>
+    </div>
 
     <div class="vitrine__fim" data-rev>
-      <p>Tem muito mais do que cabe aqui. Chama e diz o que você procura.</p>
-      <a class="btn btn--ouro" href="#" data-wa>Ver o catálogo completo</a>
+      <p>Tem muito mais do que cabe aqui na tela.</p>
+      <a class="btn btn--preto btn--grande" href="#" data-wa>Ver catálogo completo</a>
     </div>
   </div>
 </section>
@@ -158,44 +148,44 @@
   <div class="wrap">
     <header class="cabeca cabeca--centro">
       <span class="cabeca__marca" data-rev>Como comprar</span>
-      <h2 class="cabeca__titulo" data-rev>Direto no <em>WhatsApp</em></h2>
+      <h2 class="cabeca__titulo" data-rev>Fecha tudo no <em>zap</em></h2>
       <p class="cabeca__texto" data-rev>
-        Sem cadastro e sem carrinho. Você fala com uma pessoa, confere a peça de perto
-        e só fecha quando tiver certeza.
+        Sem cadastro e sem carrinho. Fala com uma pessoa, confere a peça e só fecha
+        quando tiver certeza.
       </p>
     </header>
 
     <ol class="passos">
       <li class="passo" data-rev>
-        <span class="passo__n">01</span>
+        <span class="passo__n">1</span>
         <h3>Você chama</h3>
         <p>Manda o print do que gostou ou diz o que procura. Responde gente, não robô.</p>
       </li>
       <li class="passo" data-rev>
-        <span class="passo__n">02</span>
+        <span class="passo__n">2</span>
         <h3>A gente confere</h3>
-        <p>Confirmamos tamanho, cor e disponibilidade, e separamos a peça no seu nome.</p>
+        <p>Confirmamos tamanho, cor e o que tem, e separamos a peça no seu nome.</p>
       </li>
       <li class="passo" data-rev>
-        <span class="passo__n">03</span>
+        <span class="passo__n">3</span>
         <h3>Você fecha</h3>
-        <p>Combinamos a forma de pagamento na conversa. Nada é cobrado antes disso.</p>
+        <p>Combinamos o pagamento na conversa. Nada é cobrado antes disso.</p>
       </li>
       <li class="passo" data-rev>
-        <span class="passo__n">04</span>
+        <span class="passo__n">4</span>
         <h3>Sai pro Brasil</h3>
-        <p>Enviamos com código de rastreio pra você acompanhar até chegar na sua mão.</p>
+        <p>Enviamos com código de rastreio pra você acompanhar até chegar.</p>
       </li>
     </ol>
 
     <div class="passos__cta" data-rev>
-      <a class="btn btn--ouro btn--grande" href="#" data-wa>Começar conversa</a>
+      <a class="btn btn--wa btn--grande" href="#" data-wa>Chamar agora</a>
     </div>
   </div>
 </section>
 
-<!-- ============ ENTREGA / DÚVIDAS ============ -->
-<section class="secao secao--fundo" id="entrega">
+<!-- ============ ENTREGA ============ -->
+<section class="secao secao--gelo" id="entrega">
   <div class="wrap">
     <header class="cabeca cabeca--centro">
       <span class="cabeca__marca" data-rev>Entrega e dúvidas</span>
@@ -204,20 +194,20 @@
 
     <div class="duvidas">
       <details class="duvida" data-rev>
-        <summary>Vocês entregam na minha cidade?</summary>
-        <p>Enviamos para todo o Brasil. Assim que o pedido é postado você recebe o código de rastreio.</p>
+        <summary>Entrega na minha cidade?</summary>
+        <p>Enviamos para todo o Brasil. Assim que posta, você recebe o código de rastreio.</p>
       </details>
       <details class="duvida" data-rev>
-        <summary>Como sei o tamanho certo?</summary>
+        <summary>Como sei meu tamanho?</summary>
         <p>Antes de fechar a gente passa as medidas da peça pra você comparar com uma que já tem em casa. É o jeito mais seguro de acertar à distância.</p>
       </details>
       <details class="duvida" data-rev>
-        <summary>Dá pra retirar pessoalmente?</summary>
-        <p>Dá. Se você é da região de Imbituba, combinamos a retirada direto na conversa.</p>
+        <summary>Dá pra retirar em Imbituba?</summary>
+        <p>Dá. Se você é da região, combinamos a retirada direto no zap.</p>
       </details>
       <details class="duvida" data-rev>
         <summary>Como funciona o pagamento?</summary>
-        <p>A forma de pagamento é combinada na conversa, junto com o frete. Nada é cobrado antes de você confirmar.</p>
+        <p>Combinado na conversa, junto com o frete. Nada é cobrado antes de você confirmar.</p>
       </details>
       <details class="duvida" data-rev>
         <summary>E se não servir?</summary>
@@ -229,12 +219,11 @@
 
 <!-- ============ FECHO ============ -->
 <section class="final">
-  <div class="final__aura" aria-hidden="true"></div>
   <div class="wrap final__wrap">
     <img class="final__brasao" src="assets/img/logo-luxuria.jpg" alt="" aria-hidden="true">
     <h2 data-rev>Chega peça nova<br><em>toda semana</em></h2>
-    <p data-rev>Chama no WhatsApp e vê o que tem agora.</p>
-    <a class="btn btn--ouro btn--grande" href="#" data-wa data-rev>Falar com a Luxúria</a>
+    <p data-rev>Chama no zap e vê o que tem agora.</p>
+    <a class="btn btn--wa btn--grande" href="#" data-wa data-rev>Falar com a Luxúria</a>
   </div>
 </section>
 
@@ -244,11 +233,11 @@
   <div class="wrap pe__wrap">
     <div class="pe__marca">
       <img src="assets/img/logo-luxuria.jpg" alt="" aria-hidden="true">
-      <p>Luxúria Imports<br><small>Moda masculina · Imbituba · SC</small></p>
+      <p>Luxúria Imports<small>Moda masculina · Imbituba · SC</small></p>
     </div>
     <nav class="pe__links" aria-label="Rodapé">
       <a href="#categorias">Categorias</a>
-      <a href="#pecas">Destaques</a>
+      <a href="#pecas">Novidades</a>
       <a href="#comprar">Como comprar</a>
       <a href="#entrega">Entrega</a>
     </nav>
@@ -266,6 +255,6 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
-<script src="assets/js/lx.js?v=2026081706"></script>
+<script src="assets/js/lx.js?v=2026081710"></script>
 </body>
 </html>

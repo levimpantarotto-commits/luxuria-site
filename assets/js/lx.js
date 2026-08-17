@@ -1,60 +1,65 @@
 /* ==========================================================================
-   LUXÚRIA IMPORTS — comportamento
+   LUXÚRIA IMPORTS — comportamento (v4)
    ==========================================================================
    >>> EDITAR ANTES DE PUBLICAR:
        1. CONFIG.whatsapp — número comercial da loja
-       2. CATEGORIAS[]    — o que a Luxúria realmente vende (hoje é a lista da
-                            referência que a cliente mandou, A CONFIRMAR)
-       3. PECAS[]         — nome, categoria e foto de cada peça
+       2. CATEGORIAS[]    — o que a Luxúria realmente vende (A CONFIRMAR)
+       3. PECAS[]         — nome, PREÇO, tamanhos, estoque e foto de cada peça
    ========================================================================== */
 
 const CONFIG = {
   // TODO CONFIRMAR: número comercial da Luxúria, formato 55DDNNNNNNNNN
   whatsapp: "5548000000000",
-  saudacao: "Fala! Vim pelo site da Luxúria e queria ver as peças."
+  saudacao: "Fala! Vim pelo site da Luxúria e queria ver as peças.",
+  parcelas: 3   // em quantas vezes o cartão divide, para o "3x de R$X"
 };
 
 /* --------------------------------------------------------------------------
    CATEGORIAS
-   ⚠️ Lista montada a partir da referência que a cliente mandou
-   (jgimportss.lojavirtualnuvem.com.br). NÃO está confirmado que a Luxúria
-   trabalha com todas. Tirar o que não tiver antes de publicar.
+   ⚠️ Lista da referência que a cliente mandou, NÃO confirmada com ela.
+   Tirar o que a Luxúria não tiver antes de publicar pra valer.
    -------------------------------------------------------------------------- */
 const CATEGORIAS = [
-  "Camisetas", "Camisetas Premium", "Oversized", "Gola Polo",
-  "Moletons", "Jaquetas", "Calças", "Bermudas",
-  "Conjuntos", "Tênis", "Bonés", "Perfumes"
+  "Camisetas", "Gola Polo", "Oversized", "Conjuntos",
+  "Bermudas", "Calças", "Bonés", "Tênis"
 ];
 
 /* --------------------------------------------------------------------------
    PEÇAS
-   Preencher `img` com o caminho em assets/img/pecas/. Enquanto for null,
-   entra o placeholder — o site funciona, só não tem foto ainda.
+   `preco` em reais (número) ou null enquanto não houver. Com preço, o cartão
+   mostra valor + parcelado, que é o que as lojas do nicho fazem.
+   `de`      — preço antigo, para riscar. null se não houver promoção.
+   `tamanhos`— array. `estoque` — número ou null.
    -------------------------------------------------------------------------- */
-/* Fotos: prints de story do fornecedor, recortados — a foto de dentro foi
-   extraída e o resto (barra de status, cabeçalho do story, rodapé) descartado.
-   Script: Temp/lx-shots/tratar-lx.py. Quadradas, 591px.
-   ⚠️ Nome de marca fica FORA do site de propósito (as peças são de marca). */
 const PECAS = [
-  { nome:"Camiseta básica",     cat:"Camisetas Premium", img:"assets/img/pecas/camiseta-marinho-basica.jpg", selo:"Novidade", desce:false },
-  { nome:"Camiseta lisa",       cat:"Camisetas Premium", img:"assets/img/pecas/camisetas-cores.jpg",         selo:null,       desce:true  },
-  { nome:"Camiseta bordada",    cat:"Camisetas",         img:"assets/img/pecas/camisetas-neutras.jpg",       selo:null,       desce:false },
-  { nome:"Camiseta recorte",    cat:"Camisetas",         img:"assets/img/pecas/polo-detalhe.jpg",            selo:"Últimas",  desce:false },
-  { nome:"Camiseta clássica",   cat:"Camisetas Premium", img:"assets/img/pecas/polos-cores.jpg",             selo:null,       desce:true  }
+  { nome:"Camiseta básica",   cat:"Camisetas",  img:"assets/img/pecas/camiseta-marinho-basica.jpg",
+    preco:null, de:null, tamanhos:["P","M","G","GG"], estoque:null, selo:"Novidade" },
+  { nome:"Camiseta lisa",     cat:"Camisetas",  img:"assets/img/pecas/camisetas-cores.jpg",
+    preco:null, de:null, tamanhos:["P","M","G","GG"], estoque:null, selo:null },
+  { nome:"Camiseta bordada",  cat:"Camisetas",  img:"assets/img/pecas/camisetas-neutras.jpg",
+    preco:null, de:null, tamanhos:["M","G","GG"],     estoque:null, selo:null },
+  { nome:"Camiseta recorte",  cat:"Gola Polo",  img:"assets/img/pecas/polo-detalhe.jpg",
+    preco:null, de:null, tamanhos:["P","M","G"],      estoque:null, selo:"Últimas" },
+  { nome:"Camiseta clássica", cat:"Camisetas",  img:"assets/img/pecas/polos-cores.jpg",
+    preco:null, de:null, tamanhos:["P","M","G","GG"], estoque:null, selo:null }
 ];
 
 /* ========================================================================== */
+
+const ICONE_WA = `<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.86 9.86 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2Zm5.8 14.03c-.25.69-1.44 1.32-1.99 1.37-.53.05-1.02.24-3.44-.72-2.9-1.14-4.74-4.1-4.88-4.29-.14-.19-1.16-1.55-1.16-2.95 0-1.41.73-2.1.99-2.38.26-.29.57-.36.76-.36.19 0 .38 0 .55.01.18.01.41-.07.65.49.24.57.81 1.98.88 2.12.07.14.12.31.02.5-.09.19-.14.31-.28.47-.14.16-.29.36-.42.48-.14.14-.28.29-.12.57.16.29.71 1.17 1.53 1.9 1.05.94 1.94 1.23 2.22 1.37.28.14.44.12.6-.07.17-.19.7-.81.88-1.09.19-.29.38-.24.64-.14.26.09 1.66.78 1.95.93.28.14.47.21.54.33.07.12.07.69-.18 1.38Z"/></svg>`;
+
+const ICONE_VAZIO = `<svg viewBox="0 0 24 24" aria-hidden="true">
+  <path d="M3 8.5 8 4h8l5 4.5-3 2.5v9H6v-9L3 8.5Z"/><path d="M9 4a3 3 0 0 0 6 0"/></svg>`;
 
 const linkWa = (extra) => {
   const txt = extra ? `${CONFIG.saudacao}\n\nInteresse: ${extra}` : CONFIG.saudacao;
   return `https://wa.me/${CONFIG.whatsapp}?text=${encodeURIComponent(txt)}`;
 };
 
-const ICONE_VAZIO = `<svg viewBox="0 0 24 24" aria-hidden="true">
-  <path d="M3 8.5 8 4h8l5 4.5-3 2.5v9H6v-9L3 8.5Z"/><path d="M9 4a3 3 0 0 0 6 0"/></svg>`;
+const real = (n) => n.toLocaleString("pt-BR", { minimumFractionDigits:2, maximumFractionDigits:2 });
 
 /* --------------------------------------------------------------------------
-   1. Categorias — cada uma abre o WhatsApp já dizendo qual é
+   1. Categorias
    -------------------------------------------------------------------------- */
 function montarCategorias(){
   const alvo = document.getElementById("categorias-grade");
@@ -67,51 +72,64 @@ function montarCategorias(){
 }
 
 /* --------------------------------------------------------------------------
-   2. Vitrine
+   2. Vitrine — cartão de loja: foto, nome, preço, parcelado, tamanhos, estoque
    -------------------------------------------------------------------------- */
 function montarVitrine(){
   const alvo = document.getElementById("vitrine");
   if(!alvo) return;
 
   alvo.innerHTML = PECAS.map(p => {
-    const classes = ["peca", p.desce ? "peca--desce" : ""].filter(Boolean).join(" ");
     const visual = p.img
       ? `<img class="peca__img" src="${p.img}" alt="${p.nome}" loading="lazy" decoding="async">`
       : `<div class="peca__vazio">${ICONE_VAZIO}<span>foto em breve</span></div>`;
+
     const selo = p.selo ? `<span class="peca__selo">${p.selo}</span>` : "";
+    const estoque = (p.estoque !== null && p.estoque !== undefined)
+      ? `<span class="peca__estoque">${p.estoque} em estoque</span>` : "";
+
+    /* Sem preço definido, o bloco inteiro some — nada de "R$ 0,00" na tela */
+    const preco = (p.preco !== null && p.preco !== undefined) ? `
+      <div class="peca__preco">
+        ${p.de ? `<span class="peca__de">R$ ${real(p.de)}</span>` : ""}
+        <span class="peca__valor">R$ ${real(p.preco)}</span>
+      </div>
+      <p class="peca__parcela">${CONFIG.parcelas}x de <strong>R$ ${real(p.preco / CONFIG.parcelas)}</strong> sem juros</p>`
+      : `<p class="peca__parcela">Preço no zap</p>`;
+
+    const tamanhos = (p.tamanhos && p.tamanhos.length)
+      ? `<div class="peca__tamanhos">${p.tamanhos.map(t => `<span>${t}</span>`).join("")}</div>` : "";
 
     return `
-      <article class="${classes}" data-rev>
-        <div class="peca__quadro">
-          ${selo}
-          ${visual}
-          <a class="peca__ver" href="${linkWa(p.nome)}" target="_blank" rel="noopener">Quero essa</a>
-        </div>
-        <div class="peca__pe">
-          <h3 class="peca__nome">${p.nome}</h3>
+      <article class="peca" data-rev>
+        <div class="peca__quadro">${selo}${visual}${estoque}</div>
+        <div class="peca__corpo">
           <span class="peca__cat">${p.cat}</span>
+          <h3 class="peca__nome">${p.nome}</h3>
+          ${preco}
+          ${tamanhos}
+          <a class="peca__ver" href="${linkWa(p.nome)}" target="_blank" rel="noopener">
+            ${ICONE_WA} Quero essa
+          </a>
         </div>
       </article>`;
   }).join("");
 }
 
 /* --------------------------------------------------------------------------
-   2b. Mural do hero — as peças de verdade em cima, não o brasão
+   3. Mural do hero
    -------------------------------------------------------------------------- */
 function montarMural(){
   const alvo = document.getElementById("mural");
   if(!alvo) return;
-  const fotos = PECAS.map(p => p.img).filter(Boolean).slice(0, 5);
+  const fotos = PECAS.map(p => p.img).filter(Boolean).slice(0, 4);
   if(fotos.length < 3){ alvo.remove(); return; }
-  alvo.innerHTML = fotos.map((src, i) => `
-    <figure>
-      <img src="${src}" alt="" ${i > 1 ? 'loading="lazy"' : ""} decoding="async">
-      ${i === 0 ? '<span class="mural__luz"></span>' : ""}
-    </figure>`).join("");
+  alvo.innerHTML = fotos.map((src, i) =>
+    `<figure><img src="${src}" alt="" ${i > 1 ? 'loading="lazy"' : ""} decoding="async"></figure>`
+  ).join("");
 }
 
 /* --------------------------------------------------------------------------
-   3. WhatsApp em tudo que tem [data-wa]
+   4. WhatsApp em tudo que tem [data-wa]
    -------------------------------------------------------------------------- */
 function ligarWhatsapp(){
   document.querySelectorAll("[data-wa]").forEach(a => {
@@ -120,12 +138,12 @@ function ligarWhatsapp(){
 }
 
 /* --------------------------------------------------------------------------
-   4. Rolagem com inércia
+   5. Rolagem com inércia
    -------------------------------------------------------------------------- */
 let lenis = null;
 function ligarRolagem(){
   if(typeof Lenis === "undefined") return;
-  lenis = new Lenis({ duration:1.15, smoothWheel:true, wheelMultiplier:.95, touchMultiplier:1.6 });
+  lenis = new Lenis({ duration:1.1, smoothWheel:true, wheelMultiplier:.95, touchMultiplier:1.6 });
 
   if(window.gsap && window.ScrollTrigger){
     lenis.on("scroll", ScrollTrigger.update);
@@ -141,15 +159,13 @@ function ligarRolagem(){
       const alvo = document.querySelector(a.getAttribute("href"));
       if(!alvo) return;
       e.preventDefault(); fecharMenu();
-      lenis.scrollTo(alvo, { offset:-70, duration:1.4 });
+      lenis.scrollTo(alvo, { offset:-70, duration:1.2 });
     });
   });
 }
 
 /* --------------------------------------------------------------------------
-   5. Abertura
-   Sem cortina de carregamento (o Levi pediu pra tirar, 17/08). A página já
-   nasce visível; o conteúdo do topo entra em cascata, sem prender ninguém.
+   6. Abertura — sem cortina de carregamento (o Levi pediu pra tirar, 17/08)
    -------------------------------------------------------------------------- */
 function abertura(){
   const mostrarFlutuante = () => document.querySelector(".flutua").classList.add("viva");
@@ -160,25 +176,21 @@ function abertura(){
     return;
   }
 
-  const tl = gsap.timeline({ defaults:{ ease:"power3.out" },
-    onComplete(){ ScrollTrigger.refresh(); } });
-
-  tl.fromTo(".mural figure", { opacity:0, y:30, scale:.97 },
-            { opacity:1, y:0, scale:1, duration:.7, stagger:.08 })
-    .fromTo("[data-letras]", { yPercent:110 }, { yPercent:0, duration:.5 }, "-=.5")
-    .fromTo(".hero__titulo .linha > span", { yPercent:112 },
-            { yPercent:0, duration:.75, stagger:.07, ease:"power4.out" }, "-=.35")
-    .fromTo(".hero__sub", { opacity:0, y:18 }, { opacity:1, y:0, duration:.5 }, "-=.45")
-    .fromTo(".hero__acoes .btn", { opacity:0, y:18 },
-            { opacity:1, y:0, duration:.45, stagger:.07 }, "-=.3")
-    .fromTo(".hero__selos li", { opacity:0, y:14 },
-            { opacity:1, y:0, duration:.45, stagger:.07 }, "-=.3")
-    .fromTo(".hero__rodape > *", { opacity:0 }, { opacity:1, duration:.4, stagger:.08 }, "-=.25")
+  gsap.timeline({ defaults:{ ease:"power3.out" }, onComplete(){ ScrollTrigger.refresh(); } })
+    .fromTo(".mural figure", { opacity:0, y:24, scale:.97 },
+            { opacity:1, y:0, scale:1, duration:.6, stagger:.07 })
+    .fromTo("[data-letras]", { yPercent:110 }, { yPercent:0, duration:.45 }, "-=.45")
+    .fromTo(".hero__titulo", { opacity:0, y:20 }, { opacity:1, y:0, duration:.55 }, "-=.3")
+    .fromTo(".hero__sub", { opacity:0, y:16 }, { opacity:1, y:0, duration:.45 }, "-=.35")
+    .fromTo(".hero__acoes .btn", { opacity:0, y:16 },
+            { opacity:1, y:0, duration:.4, stagger:.06 }, "-=.28")
+    .fromTo(".hero__selos li", { opacity:0, y:12 },
+            { opacity:1, y:0, duration:.4, stagger:.06 }, "-=.28")
     .add(mostrarFlutuante, "-=.2");
 }
 
 /* --------------------------------------------------------------------------
-   6. Revelações
+   7. Revelações
    -------------------------------------------------------------------------- */
 function ligarRevelacoes(){
   if(!window.gsap || !window.ScrollTrigger){
@@ -190,36 +202,19 @@ function ligarRevelacoes(){
   document.querySelectorAll("section, footer").forEach(sec => {
     const itens = sec.querySelectorAll("[data-rev]");
     if(!itens.length) return;
-    gsap.fromTo(itens, { opacity:0, y:34 },
-      { opacity:1, y:0, duration:.9, ease:"power3.out", stagger:.06,
-        scrollTrigger:{ trigger:sec, start:"top 78%" } });
-  });
-
-  /* o hero desbota conforme sai — start em "top top" pra progresso ser 0 no topo */
-  gsap.fromTo(".hero__centro", { opacity:1, y:0 },
-    { opacity:0, y:-70, ease:"none", immediateRender:false,
-      scrollTrigger:{ trigger:".hero", start:"top top", end:"bottom 30%", scrub:.5, invalidateOnRefresh:true } });
-
-  /* zoom lento nas fotos da vitrine */
-  gsap.utils.toArray(".peca__quadro").forEach(q => {
-    const alvo = q.querySelector(".peca__img, .peca__vazio");
-    if(!alvo) return;
-    gsap.fromTo(alvo, { scale:1.1 }, { scale:1, ease:"none",
-      scrollTrigger:{ trigger:q, start:"top bottom", end:"bottom top", scrub:1 } });
+    gsap.fromTo(itens, { opacity:0, y:26 },
+      { opacity:1, y:0, duration:.7, ease:"power3.out", stagger:.05,
+        scrollTrigger:{ trigger:sec, start:"top 82%" } });
   });
 }
 
 /* --------------------------------------------------------------------------
-   7. Nav e menu
+   8. Menu
    -------------------------------------------------------------------------- */
 function ligarNav(){
-  const nav = document.getElementById("nav");
-  const olhar = () => nav.classList.toggle("fixa", window.scrollY > 40);
-  olhar();
-  window.addEventListener("scroll", olhar, { passive:true });
-
   const burguer = document.getElementById("burguer");
   const menu = document.getElementById("menu");
+  if(!burguer || !menu) return;
   burguer.addEventListener("click", () => {
     const aberto = menu.classList.toggle("aberto");
     burguer.classList.toggle("aberto", aberto);
