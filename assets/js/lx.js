@@ -171,10 +171,6 @@ function abertura(){
     .fromTo(".hero__raios span", { opacity:0, scaleY:.4 },
             { opacity:1, scaleY:1, duration:1.1, stagger:.12 }, "-=.6")
 
-    /* filigrana desenhada */
-    .fromTo(".filigrana .fio-fil", { strokeDashoffset:1 },
-            { strokeDashoffset:0, duration:1.6, stagger:.12, ease:"power2.inOut" }, "-=1.0")
-
     /* texto */
     .fromTo("[data-letras]", { yPercent:110 }, { yPercent:0, duration:.6 }, "-=1.3")
     .fromTo(".hero__titulo .linha > span", { yPercent:112 },
@@ -208,11 +204,6 @@ function ligarRevelacoes(){
   gsap.fromTo(".hero__centro", { opacity:1, y:0 },
     { opacity:0, y:-70, ease:"none", immediateRender:false,
       scrollTrigger:{ trigger:".hero", start:"top top", end:"bottom 30%", scrub:.5, invalidateOnRefresh:true } });
-
-  /* a filigrana afunda e some junto */
-  gsap.fromTo(".filigrana", { opacity:.9, scale:1 },
-    { opacity:0, scale:1.12, ease:"none", immediateRender:false,
-      scrollTrigger:{ trigger:".hero", start:"top top", end:"bottom top", scrub:.6 } });
 
   /* zoom lento nas fotos da vitrine */
   gsap.utils.toArray(".peca__quadro").forEach(q => {

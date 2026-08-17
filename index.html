@@ -14,9 +14,11 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Outfit:wght@200;300;400;500&display=swap" rel="stylesheet">
+<!-- UMA família só, em vários pesos e larguras. É o padrão de tipografia da marca
+     (ver Identidade_Visual.md da Luxúria) e o código visual do streetwear. -->
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@75..100,300..900&display=swap" rel="stylesheet">
 
-<link rel="stylesheet" href="assets/css/lx.css?v=2026081702">
+<link rel="stylesheet" href="assets/css/lx.css?v=2026081703">
 </head>
 <body>
 
@@ -65,45 +67,7 @@
   <div class="hero__aura" aria-hidden="true"></div>
   <div class="hero__raios" aria-hidden="true"><span></span><span></span><span></span></div>
 
-  <!-- filigrana: moldura barroca desenhada no traço, some com a rolagem -->
-  <svg class="filigrana" viewBox="0 0 1200 700" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
-    <defs>
-      <linearGradient id="lx-ouro" x1="0" y1="0" x2="1" y2="1">
-        <stop offset="0%"   stop-color="#6B4A12"/>
-        <stop offset="35%"  stop-color="#EBC96E"/>
-        <stop offset="65%"  stop-color="#B8862B"/>
-        <stop offset="100%" stop-color="#6B4A12"/>
-      </linearGradient>
-    </defs>
-    <!-- Quatro cantos ornamentais (não uma moldura fechada): o desenho enquadra
-         sem cercar, e some conforme a rolagem. Cada canto é um traço só,
-         espelhado por transform — assim o desenho fica simétrico de verdade. -->
-    <g fill="none" stroke="url(#lx-ouro)" stroke-width="1.2" stroke-linecap="round">
-      <g class="canto" transform="translate(70,58)">
-        <path class="fio-fil" d="M0 128 L0 34 Q0 0 34 0 L128 0"/>
-        <path class="fio-fil" d="M14 96 Q14 14 96 14"/>
-        <path class="fio-fil" d="M30 46 Q46 30 74 32 Q56 46 52 66 Q40 52 30 46 Z"/>
-      </g>
-      <g class="canto" transform="translate(1130,58) scale(-1,1)">
-        <path class="fio-fil" d="M0 128 L0 34 Q0 0 34 0 L128 0"/>
-        <path class="fio-fil" d="M14 96 Q14 14 96 14"/>
-        <path class="fio-fil" d="M30 46 Q46 30 74 32 Q56 46 52 66 Q40 52 30 46 Z"/>
-      </g>
-      <g class="canto" transform="translate(70,642) scale(1,-1)">
-        <path class="fio-fil" d="M0 128 L0 34 Q0 0 34 0 L128 0"/>
-        <path class="fio-fil" d="M14 96 Q14 14 96 14"/>
-        <path class="fio-fil" d="M30 46 Q46 30 74 32 Q56 46 52 66 Q40 52 30 46 Z"/>
-      </g>
-      <g class="canto" transform="translate(1130,642) scale(-1,-1)">
-        <path class="fio-fil" d="M0 128 L0 34 Q0 0 34 0 L128 0"/>
-        <path class="fio-fil" d="M14 96 Q14 14 96 14"/>
-        <path class="fio-fil" d="M30 46 Q46 30 74 32 Q56 46 52 66 Q40 52 30 46 Z"/>
-      </g>
-      <!-- losango central no topo e na base, como num selo -->
-      <path class="fio-fil" d="M600 22 L616 38 L600 54 L584 38 Z"/>
-      <path class="fio-fil" d="M600 646 L616 662 L600 678 L584 662 Z"/>
-    </g>
-  </svg>
+  <!-- a moldura barroca saiu na v2: ornamento de brasão brigava com o público -->
 
   <div class="hero__centro">
     <div class="brasao" id="brasao">
@@ -114,13 +78,13 @@
     <p class="hero__olho"><span data-letras>Estilo · Qualidade · Atitude</span></p>
 
     <h1 class="hero__titulo">
-      <span class="linha"><span>Importado</span></span>
-      <span class="linha"><span>de <em>verdade</em></span></span>
+      <span class="linha"><span>O que tu</span></span>
+      <span class="linha"><span>veste <em>fala</em></span></span>
     </h1>
 
     <p class="hero__sub">
-      Peça selecionada, conferida uma a uma e enviada para todo o Brasil.
-      Você fala direto com a gente — sem carrinho, sem enrolação.
+      Camiseta, polo e boné que não tem em qualquer lugar da cidade.
+      Chega peça nova toda semana — chama e vê o que tem.
     </p>
 
     <div class="hero__acoes">
@@ -140,11 +104,11 @@
   <div class="faixa__trilho">
     <span class="faixa__grupo">
       <em>Envio para todo o Brasil</em><i>◆</i><em>Atendimento no WhatsApp</em><i>◆</i>
-      <em>Peça conferida uma a uma</em><i>◆</i><em>Novidade toda semana</em><i>◆</i>
+      <em>Tamanho conferido antes de enviar</em><i>◆</i><em>Novidade toda semana</em><i>◆</i>
     </span>
     <span class="faixa__grupo">
       <em>Envio para todo o Brasil</em><i>◆</i><em>Atendimento no WhatsApp</em><i>◆</i>
-      <em>Peça conferida uma a uma</em><i>◆</i><em>Novidade toda semana</em><i>◆</i>
+      <em>Tamanho conferido antes de enviar</em><i>◆</i><em>Novidade toda semana</em><i>◆</i>
     </span>
   </div>
 </div>
@@ -201,22 +165,22 @@
 
     <ol class="passos">
       <li class="passo" data-rev>
-        <span class="passo__n">I</span>
+        <span class="passo__n">01</span>
         <h3>Você chama</h3>
         <p>Manda o print do que gostou ou diz o que procura. Responde gente, não robô.</p>
       </li>
       <li class="passo" data-rev>
-        <span class="passo__n">II</span>
+        <span class="passo__n">02</span>
         <h3>A gente confere</h3>
         <p>Confirmamos tamanho, cor e disponibilidade, e separamos a peça no seu nome.</p>
       </li>
       <li class="passo" data-rev>
-        <span class="passo__n">III</span>
+        <span class="passo__n">03</span>
         <h3>Você fecha</h3>
         <p>Combinamos a forma de pagamento na conversa. Nada é cobrado antes disso.</p>
       </li>
       <li class="passo" data-rev>
-        <span class="passo__n">IV</span>
+        <span class="passo__n">04</span>
         <h3>Sai pro Brasil</h3>
         <p>Enviamos com código de rastreio pra você acompanhar até chegar na sua mão.</p>
       </li>
@@ -266,8 +230,8 @@
   <div class="final__aura" aria-hidden="true"></div>
   <div class="wrap final__wrap">
     <img class="final__brasao" src="assets/img/logo-luxuria.jpg" alt="" aria-hidden="true">
-    <h2 data-rev>Veste quem<br><em>não passa despercebido</em></h2>
-    <p data-rev>Chama no WhatsApp e diz o que você está procurando.</p>
+    <h2 data-rev>Chega peça nova<br><em>toda semana</em></h2>
+    <p data-rev>Chama no WhatsApp e vê o que tem agora.</p>
     <a class="btn btn--ouro btn--grande" href="#" data-wa data-rev>Falar com a Luxúria</a>
   </div>
 </section>
@@ -300,6 +264,6 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
-<script src="assets/js/lx.js?v=2026081702"></script>
+<script src="assets/js/lx.js?v=2026081703"></script>
 </body>
 </html>
