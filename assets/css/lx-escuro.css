@@ -1,0 +1,61 @@
+/* ==========================================================================
+   LUXÚRIA IMPORTS — tema ESCURO
+   ==========================================================================
+   Carrega DEPOIS do lx.css e só troca as variáveis de superfície e de tinta.
+   Nenhuma regra de layout é repetida aqui — o que a gente ajustar no lx.css
+   vale automaticamente para as duas versões.
+
+   Nota honesta: as 5 lojas do nicho que eu medi (Loja dos Crias, Estilo
+   Mandrake, Piet, Maze, Hipnoise) são TODAS de fundo branco. Esta versão
+   escura existe porque a logo da marca é preta e dourada, e a cliente pode
+   preferir o site puxando pra identidade dela em vez de pro padrão do nicho.
+   ========================================================================== */
+
+:root{
+  /* superfícies: o claro vira escuro */
+  --branco:      #0B0A0A;   /* fundo geral da página */
+  --gelo:        #131211;   /* seções alternadas (hero, novidades, entrega) */
+  --gelo-2:      #1B1917;   /* fundo de foto enquanto carrega */
+  --cartao:      #141312;   /* card de peça, passo e dúvida */
+
+  /* tinta: inverte */
+  --tinta:       #F2EFEA;
+  --tinta-70:    rgba(242,239,234,.68);
+  --tinta-45:    rgba(242,239,234,.42);
+
+  /* bordas: claras não funcionam no escuro */
+  --borda:       #2B2724;
+  --borda-forte: #3D3833;
+
+  /* a barra e o rodapé precisam se destacar do fundo, não sumir nele */
+  --preto:       #000000;
+}
+
+/* o dourado claro lê melhor que o escuro sobre fundo preto */
+.cabeca__marca,
+.cabeca__titulo em,
+.hero__titulo em{ color:var(--ouro-claro); }
+
+/* botão de contorno: no escuro a borda preta sumiria */
+.btn--linha{ border-color:var(--ouro); color:var(--ouro-claro); }
+.btn--linha:hover{ background:var(--ouro); color:#000; }
+
+/* categoria já era preta; no escuro precisa de contorno pra existir */
+.categoria{ background:#141312; border:1px solid var(--borda-forte); }
+.categoria:hover{ background:var(--ouro-fundo); border-color:var(--ouro); }
+
+/* card ganha sombra mais funda pra descolar do fundo */
+.peca:hover{ box-shadow:0 16px 40px -16px rgba(0,0,0,.9); }
+
+/* faixa de vantagens: preto sobre preto sumiria — vira dourada */
+.vantagens{
+  background:linear-gradient(90deg,var(--ouro-fundo),var(--ouro) 50%,var(--ouro-fundo));
+  color:#0B0A0A;
+}
+.vantagens i{ color:#0B0A0A; opacity:.55; }
+
+/* o fecho é escuro por padrão; aqui ele precisa se separar do corpo */
+.final{ background:#141312; border-block:1px solid var(--borda-forte); }
+
+/* combo idem */
+.combo{ background:#000; border:1px solid var(--borda-forte); }
