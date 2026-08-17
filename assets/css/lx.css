@@ -201,63 +201,47 @@ ul,ol{ list-style:none; }
 .btn--grande{ padding:1.35em 3.6em; font-size:.84rem; }
 
 /* ==========================================================================
-   HERO
+   HERO (v3) — o produto é o herói
+   Título encostado à esquerda + mural de fotos à direita. Nada centralizado:
+   layout simétrico com brasão no meio lia como marca de luxo, e o comprador
+   daqui quer ver a peça.
    ========================================================================== */
 .hero{
-  position:relative; min-height:100svh;
-  display:flex; flex-direction:column; align-items:center; justify-content:center;
-  padding:7rem clamp(1.3rem,4vw,3rem) 5.5rem;
-  text-align:center; overflow:hidden;
+  position:relative; min-height:100svh; display:flex; align-items:center;
+  padding:8rem clamp(1.3rem,4vw,3rem) 5rem; overflow:hidden;
 }
 .hero__aura{
   position:absolute; inset:0; z-index:0;
   background:
-    radial-gradient(46% 38% at 50% 34%, rgba(184,134,43,.30), transparent 68%),
-    radial-gradient(80% 60% at 50% 100%, rgba(107,74,18,.20), transparent 70%);
+    radial-gradient(60% 70% at 8% 40%, rgba(184,134,43,.20), transparent 65%),
+    radial-gradient(50% 50% at 90% 80%, rgba(107,74,18,.22), transparent 70%);
 }
-/* raios de luz atrás do brasão */
-.hero__raios{ position:absolute; inset:0; z-index:0; display:grid; place-items:center; }
-.hero__raios span{
-  position:absolute; width:1px; height:52vh; transform-origin:bottom center;
-  background:linear-gradient(to top, transparent, rgba(235,201,110,.30), transparent);
-  opacity:0;
+.hero__grade{
+  position:relative; z-index:2; width:min(100% , var(--wrap)); margin-inline:auto;
+  display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);
+  gap:clamp(2rem,5vw,4.5rem); align-items:center;
 }
-.hero__raios span:nth-child(1){ transform:rotate(-22deg) translateY(-16vh); }
-.hero__raios span:nth-child(2){ transform:rotate(0deg)   translateY(-18vh); }
-.hero__raios span:nth-child(3){ transform:rotate(22deg)  translateY(-16vh); }
+.hero__texto{ display:grid; justify-items:start; gap:1.15rem; }
 
-
-.hero__centro{ position:relative; z-index:2; display:grid; justify-items:center; gap:1.3rem; }
-
-.brasao{ position:relative; width:clamp(178px,24vw,264px); overflow:hidden; border-radius:50%; }
-.brasao img{ width:100%; height:auto; opacity:0; }
-/* luz que varre o brasão */
-.brasao__luz{
-  position:absolute; top:-40%; left:-60%; width:40%; height:180%;
-  background:linear-gradient(100deg, transparent, rgba(255,245,214,.42), transparent);
-  transform:skewX(-18deg);
-  animation:varre 5.5s var(--ease) 2.2s infinite;
+.hero__tag{
+  display:inline-flex; align-items:center; gap:.6rem;
+  font-size:.66rem; letter-spacing:.34em; text-transform:uppercase;
+  color:var(--preto); background:linear-gradient(135deg,var(--ouro),var(--ouro-claro));
+  padding:.5em 1.1em; font-weight:600; overflow:hidden;
 }
-@keyframes varre{
-  0%{ left:-60% } 55%,100%{ left:130% }
-}
-
-.hero__olho{
-  font-size:.68rem; letter-spacing:.5em; text-transform:uppercase;
-  color:var(--ouro); overflow:hidden;
-}
-.hero__olho span{ display:inline-block; }
+.hero__tag span{ display:inline-block; }
 
 .hero__titulo{
   font-family:var(--display); font-weight:900;
-  font-variation-settings:"wdth" 82;
-  font-size:clamp(2.6rem,8vw,6.4rem); line-height:.92;
-  letter-spacing:-.022em; text-transform:uppercase; color:var(--gelo);
+  font-variation-settings:"wdth" 78;
+  font-size:clamp(3rem,8.4vw,7.4rem); line-height:.82;
+  letter-spacing:-.03em; text-transform:uppercase; color:var(--gelo);
+  text-align:left;
 }
-.hero__titulo .linha{ display:block; overflow:hidden; padding-block:.06em; }
+.hero__titulo .linha{ display:block; overflow:hidden; }
 .hero__titulo .linha > span{ display:block; }
 .hero__titulo em{
-  font-style:normal; font-weight:700;
+  font-style:normal;
   background:linear-gradient(100deg,var(--ouro-fundo),var(--ouro-brilho) 38%,var(--ouro) 66%,var(--ouro-fundo));
   background-size:220% 100%;
   -webkit-background-clip:text; background-clip:text; color:transparent;
@@ -265,8 +249,43 @@ ul,ol{ list-style:none; }
 }
 @keyframes brilhoOuro{ to{ background-position:220% 0 } }
 
-.hero__sub{ max-width:48ch; color:var(--gelo-60); margin-top:.3rem; }
-.hero__acoes{ display:flex; flex-wrap:wrap; gap:1rem; justify-content:center; margin-top:1.1rem; }
+.hero__sub{ max-width:42ch; color:var(--gelo-60); }
+.hero__acoes{ display:flex; flex-wrap:wrap; gap:.9rem; margin-top:.4rem; }
+
+.hero__selos{
+  display:flex; flex-wrap:wrap; gap:1.8rem; margin-top:1.4rem;
+  padding-top:1.4rem; border-top:1px solid var(--borda-ouro); width:100%;
+}
+.hero__selos strong{
+  display:block; font-family:var(--display); font-weight:800;
+  font-variation-settings:"wdth" 88;
+  font-size:.9rem; text-transform:uppercase; letter-spacing:-.005em; color:var(--ouro-claro);
+}
+.hero__selos span{ font-size:.74rem; color:var(--gelo-38); }
+
+/* ---------- mural de peças ---------- */
+.mural{
+  display:grid; grid-template-columns:repeat(2,1fr);
+  gap:clamp(.6rem,1.2vw,1rem);
+}
+.mural figure{
+  position:relative; overflow:hidden; border:1px solid var(--borda-ouro);
+  border-radius:var(--raio); aspect-ratio:1/1; opacity:0;
+}
+/* todas quadradas: as fotos do fornecedor são 1:1 e qualquer outro formato
+   corta a peça. Quatro cabem na dobra sem transbordar. */
+.mural figure:nth-child(n+5){ display:none; }
+.mural img{ width:100%; height:100%; object-fit:cover; object-position:center; }
+.mural figure::after{
+  content:""; position:absolute; inset:0;
+  background:linear-gradient(to top, rgba(8,7,7,.55), transparent 55%);
+}
+.mural__luz{
+  position:absolute; top:-40%; left:-70%; width:45%; height:180%; z-index:2;
+  background:linear-gradient(100deg, transparent, rgba(255,245,214,.28), transparent);
+  transform:skewX(-18deg); animation:varre 6s var(--ease) 2.4s infinite;
+}
+@keyframes varre{ 0%{ left:-70% } 55%,100%{ left:140% } }
 
 .hero__rodape{
   position:absolute; bottom:2rem; left:0; right:0; z-index:2;
@@ -550,7 +569,16 @@ ul,ol{ list-style:none; }
   .nav__links,.btn--nav{ display:none; }
   .nav__burguer{ display:block; }
   }
+@media (max-width:900px){
+  .hero__grade{ grid-template-columns:1fr; gap:2.5rem; }
+  .hero__texto{ justify-items:start; }
+  .mural{ grid-template-columns:repeat(2,1fr); }
+  .mural figure:nth-child(n+3){ display:none; }
+}
 @media (max-width:640px){
+  .hero{ padding-top:7rem; }
+  .hero__selos{ gap:1.1rem; }
+  .hero__selos li{ flex:1 1 100%; }
   .peca{ grid-column:span 12; }
   .vitrine{ gap:1.6rem; }
   .hero{ padding-top:7.5rem; }

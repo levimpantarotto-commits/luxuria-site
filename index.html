@@ -18,7 +18,7 @@
      (ver Identidade_Visual.md da Luxúria) e o código visual do streetwear. -->
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@75..100,300..900&display=swap" rel="stylesheet">
 
-<link rel="stylesheet" href="assets/css/lx.css?v=2026081703">
+<link rel="stylesheet" href="assets/css/lx.css?v=2026081705">
 </head>
 <body>
 
@@ -63,34 +63,42 @@
 <main id="topo">
 
 <!-- ============ HERO ============ -->
+<!-- v3: o produto é o herói, não o brasão. Título encostado à esquerda,
+     mural de fotos ocupando a direita, sem centralizar nada. -->
 <section class="hero">
   <div class="hero__aura" aria-hidden="true"></div>
-  <div class="hero__raios" aria-hidden="true"><span></span><span></span><span></span></div>
 
-  <!-- a moldura barroca saiu na v2: ornamento de brasão brigava com o público -->
+  <div class="hero__grade">
 
-  <div class="hero__centro">
-    <div class="brasao" id="brasao">
-      <img src="assets/img/logo-luxuria.jpg" alt="Luxúria Imports">
-      <span class="brasao__luz" aria-hidden="true"></span>
+    <div class="hero__texto">
+      <p class="hero__tag"><span data-letras>Chegou essa semana</span></p>
+
+      <h1 class="hero__titulo">
+        <span class="linha"><span>O que tu</span></span>
+        <span class="linha"><span>veste</span></span>
+        <span class="linha"><span><em>fala</em></span></span>
+      </h1>
+
+      <p class="hero__sub">
+        Camiseta, polo e boné que não tem em qualquer lugar da cidade.
+        Chega coisa nova toda semana.
+      </p>
+
+      <div class="hero__acoes">
+        <a class="btn btn--ouro" href="#" data-wa>Ver o que chegou</a>
+        <a class="btn btn--linha" href="#categorias">Todas as categorias</a>
+      </div>
+
+      <ul class="hero__selos">
+        <li><strong>Todo o Brasil</strong><span>envio com rastreio</span></li>
+        <li><strong>No WhatsApp</strong><span>responde gente, não robô</span></li>
+        <li><strong>Toda semana</strong><span>grade nova</span></li>
+      </ul>
     </div>
 
-    <p class="hero__olho"><span data-letras>Estilo · Qualidade · Atitude</span></p>
+    <!-- mural: as peças de verdade, montado por lx.js a partir de PECAS -->
+    <div class="mural" id="mural" aria-hidden="true"></div>
 
-    <h1 class="hero__titulo">
-      <span class="linha"><span>O que tu</span></span>
-      <span class="linha"><span>veste <em>fala</em></span></span>
-    </h1>
-
-    <p class="hero__sub">
-      Camiseta, polo e boné que não tem em qualquer lugar da cidade.
-      Chega peça nova toda semana — chama e vê o que tem.
-    </p>
-
-    <div class="hero__acoes">
-      <a class="btn btn--ouro" href="#" data-wa>Ver o que chegou</a>
-      <a class="btn btn--linha" href="#categorias">Categorias</a>
-    </div>
   </div>
 
   <div class="hero__rodape">
@@ -264,6 +272,6 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
-<script src="assets/js/lx.js?v=2026081703"></script>
+<script src="assets/js/lx.js?v=2026081705"></script>
 </body>
 </html>

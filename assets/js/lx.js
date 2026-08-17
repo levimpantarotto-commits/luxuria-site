@@ -96,6 +96,21 @@ function montarVitrine(){
 }
 
 /* --------------------------------------------------------------------------
+   2b. Mural do hero — as peças de verdade em cima, não o brasão
+   -------------------------------------------------------------------------- */
+function montarMural(){
+  const alvo = document.getElementById("mural");
+  if(!alvo) return;
+  const fotos = PECAS.map(p => p.img).filter(Boolean).slice(0, 5);
+  if(fotos.length < 3){ alvo.remove(); return; }
+  alvo.innerHTML = fotos.map((src, i) => `
+    <figure>
+      <img src="${src}" alt="" ${i > 1 ? 'loading="lazy"' : ""} decoding="async">
+      ${i === 0 ? '<span class="mural__luz"></span>' : ""}
+    </figure>`).join("");
+}
+
+/* --------------------------------------------------------------------------
    3. WhatsApp em tudo que tem [data-wa]
    -------------------------------------------------------------------------- */
 function ligarWhatsapp(){
@@ -141,7 +156,7 @@ function abertura(){
   if(!window.gsap){
     if(cortina) cortina.remove();
     document.body.style.overflow = "";
-    document.querySelector(".brasao img").style.opacity = 1;
+    document.querySelectorAll(".mural figure").forEach(f => f.style.opacity = 1);
     mostrarFlutuante();
     return;
   }
@@ -165,14 +180,12 @@ function abertura(){
     .to(".cortina__risco i", { scaleX:1, duration:.55, ease:"power2.inOut" }, "-=.25")
     .to(".cortina", { yPercent:-100, duration:.85, ease:"power3.inOut" }, "+=.1")
 
-    /* brasão + raios de luz */
-    .fromTo(".brasao img", { opacity:0, scale:.9 },
-            { opacity:1, scale:1, duration:.8, ease:"back.out(1.5)" }, "-=.5")
-    .fromTo(".hero__raios span", { opacity:0, scaleY:.4 },
-            { opacity:1, scaleY:1, duration:1.1, stagger:.12 }, "-=.6")
+    /* mural de peças entra em cascata */
+    .fromTo(".mural figure", { opacity:0, y:34, scale:.96 },
+            { opacity:1, y:0, scale:1, duration:.75, stagger:.09, ease:"power3.out" }, "-=.45")
 
     /* texto */
-    .fromTo("[data-letras]", { yPercent:110 }, { yPercent:0, duration:.6 }, "-=1.3")
+    .fromTo("[data-letras]", { yPercent:110 }, { yPercent:0, duration:.6 }, "-=.9")
     .fromTo(".hero__titulo .linha > span", { yPercent:112 },
             { yPercent:0, duration:.9, stagger:.09, ease:"power4.out" }, "-=.45")
     .fromTo(".hero__sub", { opacity:0, y:20 }, { opacity:1, y:0, duration:.55 }, "-=.5")
@@ -252,6 +265,7 @@ document.addEventListener("DOMContentLoaded", () => {
   document.getElementById("ano").textContent = new Date().getFullYear();
   montarCategorias();
   montarVitrine();
+  montarMural();
   ligarWhatsapp();
   ligarNav();
   ligarRolagem();
