@@ -376,7 +376,8 @@ ul,ol{ list-style:none; }
 .peca__quadro{
   position:relative; overflow:hidden; border-radius:var(--raio);
   background:linear-gradient(155deg,var(--carvao),var(--preto-2) 60%,var(--carvao-2));
-  aspect-ratio:3/4; border:1px solid var(--borda-ouro);
+  /* quadrado: as fotos do fornecedor são flat lay 1:1 sobre mármore */
+  aspect-ratio:1/1; border:1px solid var(--borda-ouro);
 }
 .peca__quadro::after{
   content:""; position:absolute; inset:0;

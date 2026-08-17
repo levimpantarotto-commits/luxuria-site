@@ -31,13 +31,16 @@ const CATEGORIAS = [
    Preencher `img` com o caminho em assets/img/pecas/. Enquanto for null,
    entra o placeholder — o site funciona, só não tem foto ainda.
    -------------------------------------------------------------------------- */
+/* Fotos: prints de story do fornecedor, recortados — a foto de dentro foi
+   extraída e o resto (barra de status, cabeçalho do story, rodapé) descartado.
+   Script: Temp/lx-shots/tratar-lx.py. Quadradas, 591px.
+   ⚠️ Nome de marca fica FORA do site de propósito (as peças são de marca). */
 const PECAS = [
-  { nome:"Camiseta premium",  cat:"Camisetas Premium", img:null, selo:"Novidade", desce:false },
-  { nome:"Gola polo",         cat:"Gola Polo",         img:null, selo:null,       desce:true  },
-  { nome:"Oversized",         cat:"Oversized",         img:null, selo:null,       desce:false },
-  { nome:"Conjunto",          cat:"Conjuntos",         img:null, selo:"Últimas",  desce:false },
-  { nome:"Calça cargo",       cat:"Calças",            img:null, selo:null,       desce:true  },
-  { nome:"Bermuda sarja",     cat:"Bermudas",          img:null, selo:null,       desce:false }
+  { nome:"Camiseta básica",     cat:"Camisetas Premium", img:"assets/img/pecas/camiseta-marinho-basica.jpg", selo:"Novidade", desce:false },
+  { nome:"Camiseta lisa",       cat:"Camisetas Premium", img:"assets/img/pecas/camisetas-cores.jpg",         selo:null,       desce:true  },
+  { nome:"Camiseta bordada",    cat:"Camisetas",         img:"assets/img/pecas/camisetas-neutras.jpg",       selo:null,       desce:false },
+  { nome:"Camiseta recorte",    cat:"Camisetas",         img:"assets/img/pecas/polo-detalhe.jpg",            selo:"Últimas",  desce:false },
+  { nome:"Camiseta clássica",   cat:"Camisetas Premium", img:"assets/img/pecas/polos-cores.jpg",             selo:null,       desce:true  }
 ];
 
 /* ========================================================================== */
