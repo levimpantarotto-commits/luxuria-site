@@ -170,7 +170,13 @@ function ligarRolagem(){
 }
 
 /* --------------------------------------------------------------------------
-   6. Abertura — sem cortina de carregamento (o Levi pediu pra tirar, 17/08)
+   6. Abertura
+   Receita APROVADA pelo Levi no site LMP em 11/08/2026 (registrada no
+   Cerebro_Design/Motion_e_Web): escala 1,22 com blur de 20px indo a 0, em
+   expo.out de 1,6s, que da sensacao de camera avancando.
+   A versao anterior usava escala 0,97 e 12px de deslocamento: e exatamente a
+   sutileza que ele reprovou no LMP ("6% de escala, sem impacto").
+   Sem cortina de carregamento e sem gate de reduce-motion.
    -------------------------------------------------------------------------- */
 function abertura(){
   const mostrarFlutuante = () => document.querySelector(".flutua").classList.add("viva");
@@ -181,21 +187,29 @@ function abertura(){
     return;
   }
 
-  gsap.timeline({ defaults:{ ease:"power3.out" }, onComplete(){ ScrollTrigger.refresh(); } })
-    .fromTo(".mural figure", { opacity:0, y:24, scale:.97 },
-            { opacity:1, y:0, scale:1, duration:.6, stagger:.07 })
-    .fromTo("[data-letras]", { yPercent:110 }, { yPercent:0, duration:.45 }, "-=.45")
-    .fromTo(".hero__titulo", { opacity:0, y:20 }, { opacity:1, y:0, duration:.55 }, "-=.3")
-    .fromTo(".hero__sub", { opacity:0, y:16 }, { opacity:1, y:0, duration:.45 }, "-=.35")
-    .fromTo(".hero__acoes .btn", { opacity:0, y:16 },
-            { opacity:1, y:0, duration:.4, stagger:.06 }, "-=.28")
-    .fromTo(".hero__selos li", { opacity:0, y:12 },
-            { opacity:1, y:0, duration:.4, stagger:.06 }, "-=.28")
-    .add(mostrarFlutuante, "-=.2");
+  gsap.timeline({ onComplete(){ ScrollTrigger.refresh(); } })
+    /* camera avancando sobre as fotos */
+    .fromTo(".mural figure",
+      { opacity:0, scale:1.22, filter:"blur(20px)" },
+      { opacity:1, scale:1, filter:"blur(0px)", duration:1.6, stagger:.13, ease:"expo.out" })
+    /* etiqueta desliza de dentro da propria caixa */
+    .fromTo("[data-letras]", { yPercent:130 }, { yPercent:0, duration:.7, ease:"expo.out" }, "-=1.25")
+    /* titulo entra pesado, tambem com blur */
+    .fromTo(".hero__titulo",
+      { opacity:0, scale:1.14, filter:"blur(14px)", y:24 },
+      { opacity:1, scale:1, filter:"blur(0px)", y:0, duration:1.25, ease:"expo.out" }, "-=1.05")
+    .fromTo(".hero__sub", { opacity:0, y:26 }, { opacity:1, y:0, duration:.7, ease:"expo.out" }, "-=.85")
+    .fromTo(".hero__acoes .btn", { opacity:0, y:26, scale:.94 },
+      { opacity:1, y:0, scale:1, duration:.7, stagger:.1, ease:"back.out(1.7)" }, "-=.6")
+    .fromTo(".hero__selos li", { opacity:0, y:20 },
+      { opacity:1, y:0, duration:.55, stagger:.09, ease:"expo.out" }, "-=.5")
+    .add(mostrarFlutuante, "-=.4");
 }
 
 /* --------------------------------------------------------------------------
-   7. Revelações
+   7. Revelacoes
+   Cards entram em boot sequencial de 150ms, como os 16 agentes do site LMP.
+   Movimento grande o bastante pra ser percebido: 48px + escala + blur.
    -------------------------------------------------------------------------- */
 function ligarRevelacoes(){
   if(!window.gsap || !window.ScrollTrigger){
@@ -204,12 +218,54 @@ function ligarRevelacoes(){
   }
   gsap.registerPlugin(ScrollTrigger);
 
+  /* titulos e textos de secao */
   document.querySelectorAll("section, footer").forEach(sec => {
-    const itens = sec.querySelectorAll("[data-rev]");
+    const itens = sec.querySelectorAll(".cabeca [data-rev], .vitrine__fim [data-rev], .passos__cta [data-rev], footer [data-rev]");
     if(!itens.length) return;
-    gsap.fromTo(itens, { opacity:0, y:26 },
-      { opacity:1, y:0, duration:.7, ease:"power3.out", stagger:.05,
-        scrollTrigger:{ trigger:sec, start:"top 82%" } });
+    gsap.fromTo(itens, { opacity:0, y:40, filter:"blur(8px)" },
+      { opacity:1, y:0, filter:"blur(0px)", duration:1, ease:"expo.out", stagger:.09,
+        scrollTrigger:{ trigger:sec, start:"top 80%" } });
+  });
+
+  /* cards de peca: boot sequencial, 150ms um do outro */
+  const cards = gsap.utils.toArray(".peca[data-rev]");
+  if(cards.length){
+    gsap.fromTo(cards,
+      { opacity:0, y:48, scale:.9, filter:"blur(10px)" },
+      { opacity:1, y:0, scale:1, filter:"blur(0px)", duration:.95, ease:"expo.out", stagger:.15,
+        scrollTrigger:{ trigger:"#pecas", start:"top 78%" } });
+  }
+
+  /* categorias: mesma cadencia, mais rapida porque sao 8 */
+  const cats = gsap.utils.toArray(".categoria[data-rev]");
+  if(cats.length){
+    gsap.fromTo(cats,
+      { opacity:0, y:34, scale:.92 },
+      { opacity:1, y:0, scale:1, duration:.7, ease:"back.out(1.5)", stagger:.07,
+        scrollTrigger:{ trigger:"#categorias", start:"top 80%" } });
+  }
+
+  /* passos */
+  const passos = gsap.utils.toArray(".passo[data-rev]");
+  if(passos.length){
+    gsap.fromTo(passos,
+      { opacity:0, y:40, filter:"blur(8px)" },
+      { opacity:1, y:0, filter:"blur(0px)", duration:.85, ease:"expo.out", stagger:.12,
+        scrollTrigger:{ trigger:"#comprar", start:"top 78%" } });
+  }
+
+  /* duvidas */
+  const duvidas = gsap.utils.toArray(".duvida[data-rev]");
+  if(duvidas.length){
+    gsap.fromTo(duvidas, { opacity:0, x:-26 },
+      { opacity:1, x:0, duration:.6, ease:"expo.out", stagger:.08,
+        scrollTrigger:{ trigger:"#entrega", start:"top 80%" } });
+  }
+
+  /* as fotos do mural respiram devagar enquanto a pagina rola */
+  gsap.utils.toArray(".mural figure img").forEach((img, i) => {
+    gsap.fromTo(img, { scale:1.12 }, { scale:1, ease:"none",
+      scrollTrigger:{ trigger:".hero", start:"top top", end:"bottom top", scrub:.8 } });
   });
 }
 

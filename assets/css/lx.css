@@ -122,6 +122,7 @@ ul,ol{ list-style:none; }
   transition:filter .25s var(--ease), transform .25s var(--ease);
 }
 .nav__wa:hover{ filter:brightness(1.1); transform:translateY(-1px); }
+.nav__wa:active{ transform:translateY(1px) scale(.985); }
 .nav__wa svg{ width:17px; height:17px; fill:currentColor; }
 
 .nav__burguer{ display:none; width:32px; height:20px; position:relative; }
@@ -161,6 +162,7 @@ ul,ol{ list-style:none; }
   transition:filter .25s var(--ease), transform .25s var(--ease), background .25s, color .25s;
 }
 .btn:hover{ transform:translateY(-2px); }
+.btn:active{ transform:translateY(1px) scale(.985); }
 .btn svg{ width:18px; height:18px; fill:currentColor; }
 
 .btn--wa{ background:var(--verde-wa); color:#fff; }
@@ -180,7 +182,8 @@ ul,ol{ list-style:none; }
 .hero{
   position:relative; background:var(--gelo);
   border-bottom:1px solid var(--borda);
-  padding:clamp(2rem,4vw,3.5rem) 0 clamp(2.5rem,5vw,4rem);
+  /* respiro assimétrico: mais em cima que embaixo, dá ar de projeto */
+  padding:clamp(3.5rem,7vw,7rem) 0 clamp(2.5rem,5vw,5rem);
 }
 .hero__grade{
   display:grid; grid-template-columns:minmax(0,.95fr) minmax(0,1.05fr);
@@ -226,7 +229,8 @@ ul,ol{ list-style:none; }
 /* ==========================================================================
    SEÇÕES
    ========================================================================== */
-.secao{ padding:clamp(3rem,6vw,5rem) 0; }
+/* régua do Anti_Slop: seção respira de 96px a 160px no desktop */
+.secao{ padding:clamp(4.5rem,9vw,10rem) 0; }
 .secao--gelo{ background:var(--gelo); border-block:1px solid var(--borda); }
 
 .cabeca{ margin-bottom:clamp(1.8rem,3.5vw,2.8rem); }
@@ -258,22 +262,32 @@ ul,ol{ list-style:none; }
   transition:background .25s var(--ease), transform .25s var(--ease);
 }
 .categoria:hover{ background:var(--ouro-fundo); transform:translateY(-3px); }
+.categoria:active{ transform:translateY(0) scale(.98); }
 .categoria__nome{ font-size:.92rem; font-weight:800; text-transform:uppercase; letter-spacing:.02em; }
 .categoria__ver{ font-size:.66rem; color:var(--ouro-claro); text-transform:uppercase; letter-spacing:.08em; }
 
 /* ==========================================================================
    VITRINE — cartão de e-commerce: foto, nome, preço, parcelado, estoque
+   Grade de 12 colunas com a PRIMEIRA peça em dobro. Grade perfeitamente
+   regular é assinatura de peça gerada no automático (régua do Anti_Slop).
    ========================================================================== */
 .vitrine{
-  display:grid; grid-template-columns:repeat(auto-fill,minmax(228px,1fr));
-  gap:clamp(.8rem,1.6vw,1.4rem);
+  display:grid; grid-template-columns:repeat(12,1fr);
+  gap:clamp(.9rem,1.8vw,1.5rem);
 }
+.peca{ grid-column:span 3; }
+.peca:first-child{ grid-column:span 6; }
+.peca:first-child .peca__quadro{ aspect-ratio:4/3; }
+.peca:first-child .peca__nome{ font-size:1.3rem; }
+.peca:first-child .peca__corpo{ padding:1.2rem 1.2rem 1.4rem; }
 .peca{
   display:flex; flex-direction:column;
   background:var(--cartao); border:1px solid var(--borda); border-radius:var(--raio);
-  overflow:hidden; transition:box-shadow .25s var(--ease), transform .25s var(--ease);
+  overflow:hidden; box-shadow:0 1px 2px rgba(0,0,0,.05);
+  transition:box-shadow .3s var(--ease), transform .3s var(--ease);
 }
-.peca:hover{ box-shadow:0 14px 34px -18px rgba(0,0,0,.35); transform:translateY(-3px); }
+.peca:hover{ box-shadow:0 22px 48px -20px rgba(0,0,0,.45); transform:translateY(-6px); }
+.peca:first-child{ box-shadow:0 8px 22px -14px rgba(0,0,0,.28); }
 
 .peca__quadro{ position:relative; aspect-ratio:1/1; background:var(--gelo-2); overflow:hidden; }
 .peca__img{ width:100%; height:100%; object-fit:cover; transition:transform .6s var(--ease); }
@@ -321,6 +335,7 @@ ul,ol{ list-style:none; }
   transition:filter .25s var(--ease);
 }
 .peca__ver:hover{ filter:brightness(1.1); }
+.peca__ver:active{ transform:scale(.985); }
 .peca__ver svg{ width:15px; height:15px; fill:currentColor; }
 
 .vitrine__fim{ margin-top:2.4rem; text-align:center; display:grid; justify-items:center; gap:1rem; }
@@ -374,7 +389,7 @@ ul,ol{ list-style:none; }
 /* ==========================================================================
    FECHO
    ========================================================================== */
-.final{ background:var(--preto); color:#fff; padding:clamp(3rem,6vw,5rem) 0; text-align:center; }
+.final{ background:var(--preto); color:#fff; padding:clamp(4.5rem,9vw,9rem) 0; text-align:center; }
 .final__wrap{ display:grid; justify-items:center; gap:1.1rem; }
 .final__brasao{ width:clamp(80px,10vw,110px); height:auto; border-radius:50%; }
 .final h2{
@@ -413,6 +428,7 @@ ul,ol{ list-style:none; }
 }
 .flutua.viva{ transform:scale(1); }
 .flutua:hover{ transform:scale(1.08); }
+.flutua:active{ transform:scale(.96); }
 .flutua svg{ width:28px; height:28px; fill:#fff; }
 
 [data-rev]{ opacity:0; }
@@ -431,8 +447,15 @@ ul,ol{ list-style:none; }
   .nav__wa span{ display:none; }
   .nav__wa{ padding:.7em .9em; }
 }
+@media (max-width:1024px){
+  .peca{ grid-column:span 4; }
+  .peca:first-child{ grid-column:span 8; }
+}
 @media (max-width:640px){
-  .vitrine{ grid-template-columns:repeat(2,1fr); gap:.7rem; }
+  .vitrine{ gap:.7rem; }
+  .peca{ grid-column:span 6; }
+  .peca:first-child{ grid-column:span 12; }
+  .peca:first-child .peca__quadro{ aspect-ratio:1/1; }
   .peca__valor{ font-size:1.15rem; }
   .peca__corpo{ padding:.7rem .7rem .85rem; }
   .categorias{ grid-template-columns:repeat(2,1fr); }
