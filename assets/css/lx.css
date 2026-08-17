@@ -341,16 +341,6 @@ ul,ol{ list-style:none; }
 .vitrine__fim{ margin-top:2.4rem; text-align:center; display:grid; justify-items:center; gap:1rem; }
 .vitrine__fim p{ color:var(--tinta-70); max-width:44ch; }
 
-/* combo: desconto por quantidade, igual às lojas do nicho */
-.combo{
-  margin-top:1.6rem; background:var(--preto); color:#fff;
-  border-radius:var(--raio); padding:1.2rem 1.4rem;
-  display:flex; flex-wrap:wrap; align-items:center; justify-content:center; gap:.6rem 1.2rem;
-  text-align:center;
-}
-.combo strong{ font-size:1.05rem; font-weight:800; text-transform:uppercase; color:var(--ouro-claro); }
-.combo span{ font-size:.9rem; color:rgba(255,255,255,.8); }
-
 /* ==========================================================================
    PASSOS
    ========================================================================== */

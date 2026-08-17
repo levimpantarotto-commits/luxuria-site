@@ -220,7 +220,7 @@ function ligarRevelacoes(){
 
   /* titulos e textos de secao */
   document.querySelectorAll("section, footer").forEach(sec => {
-    const itens = sec.querySelectorAll(".cabeca [data-rev], .vitrine__fim [data-rev], .passos__cta [data-rev], footer [data-rev]");
+    const itens = sec.querySelectorAll(".cabeca [data-rev], .vitrine__fim[data-rev], .passos__cta[data-rev], .final [data-rev], footer [data-rev]");
     if(!itens.length) return;
     gsap.fromTo(itens, { opacity:0, y:40, filter:"blur(8px)" },
       { opacity:1, y:0, filter:"blur(0px)", duration:1, ease:"expo.out", stagger:.09,
@@ -261,6 +261,18 @@ function ligarRevelacoes(){
       { opacity:1, x:0, duration:.6, ease:"expo.out", stagger:.08,
         scrollTrigger:{ trigger:"#entrega", start:"top 80%" } });
   }
+
+  /* Rede de seguranca: varre no fim e revela qualquer [data-rev] que nao tenha
+     recebido tween. Um seletor errado nao pode mais apagar um botao. */
+  requestAnimationFrame(() => {
+    document.querySelectorAll("[data-rev]").forEach(el => {
+      if(!gsap.getTweensOf(el).length){
+        gsap.fromTo(el, { opacity:0, y:30 },
+          { opacity:1, y:0, duration:.8, ease:"expo.out",
+            scrollTrigger:{ trigger:el, start:"top 88%" } });
+      }
+    });
+  });
 
   /* as fotos do mural respiram devagar enquanto a pagina rola */
   gsap.utils.toArray(".mural figure img").forEach((img, i) => {
