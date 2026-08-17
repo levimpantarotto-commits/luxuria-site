@@ -36,7 +36,11 @@
   --borda:      #E2DED8;
   --borda-forte:#CFC9C0;
 
-  --display: "Permanent Marker", "Archivo", cursive;
+  /* Uma família só, pesada e condensada. A fonte de pincel (Permanent Marker)
+     foi testada e descartada em 17/08: puxa pra artesanal/informal, e esse
+     público compra status de grife — as marcas que ele admira (Lacoste, Boss,
+     Nike) usam tipografia limpa e firme. */
+  --display: "Archivo", "Arial Narrow", sans-serif;
   --corpo:   "Archivo", "Segoe UI", sans-serif;
 
   --wrap: 1280px;
@@ -191,9 +195,10 @@ ul,ol{ list-style:none; }
 }
 
 .hero__titulo{
-  font-family:var(--display); font-weight:400;
-  font-size:clamp(2.4rem,6vw,4.4rem); line-height:1.02;
-  text-transform:uppercase; color:var(--tinta);
+  font-family:var(--display); font-weight:900;
+  font-variation-settings:"wdth" 80;
+  font-size:clamp(2.6rem,6.6vw,5rem); line-height:.94;
+  letter-spacing:-.025em; text-transform:uppercase; color:var(--tinta);
 }
 .hero__titulo em{ font-style:normal; color:var(--ouro-fundo); }
 
@@ -231,9 +236,10 @@ ul,ol{ list-style:none; }
   text-transform:uppercase; color:var(--ouro-fundo); margin-bottom:.5rem;
 }
 .cabeca__titulo{
-  font-family:var(--display); font-weight:400;
-  font-size:clamp(1.9rem,4.2vw,3.2rem); line-height:1.05;
-  text-transform:uppercase; color:var(--tinta);
+  font-family:var(--display); font-weight:900;
+  font-variation-settings:"wdth" 82;
+  font-size:clamp(1.9rem,4.4vw,3.4rem); line-height:1;
+  letter-spacing:-.022em; text-transform:uppercase; color:var(--tinta);
 }
 .cabeca__titulo em{ font-style:normal; color:var(--ouro-fundo); }
 .cabeca__texto{ margin-top:.8rem; color:var(--tinta-70); max-width:56ch; }
@@ -372,8 +378,10 @@ ul,ol{ list-style:none; }
 .final__wrap{ display:grid; justify-items:center; gap:1.1rem; }
 .final__brasao{ width:clamp(80px,10vw,110px); height:auto; border-radius:50%; }
 .final h2{
-  font-family:var(--display); font-weight:400;
-  font-size:clamp(1.9rem,4.6vw,3.4rem); line-height:1.05; text-transform:uppercase;
+  font-family:var(--display); font-weight:900;
+  font-variation-settings:"wdth" 82;
+  font-size:clamp(1.9rem,4.8vw,3.6rem); line-height:1;
+  letter-spacing:-.022em; text-transform:uppercase;
 }
 .final h2 em{ font-style:normal; color:var(--ouro-claro); }
 .final p{ color:rgba(255,255,255,.72); max-width:44ch; }

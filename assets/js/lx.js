@@ -30,18 +30,23 @@ const CATEGORIAS = [
    mostra valor + parcelado, que é o que as lojas do nicho fazem.
    `de`      — preço antigo, para riscar. null se não houver promoção.
    `tamanhos`— array. `estoque` — número ou null.
+
+   ⚠️ TUDO AQUI ESTÁ VAZIO DE PROPÓSITO. Preço, tamanho, estoque e selo
+   ("Novidade", "Últimas") são dado de operação — só entram quando a Paola
+   informar. Já preenchi isso com chute uma vez e o Levi pegou (17/08).
+   Regra: não inventar dado de cliente, nem "só pra ficar bonito".
    -------------------------------------------------------------------------- */
 const PECAS = [
-  { nome:"Camiseta básica",   cat:"Camisetas",  img:"assets/img/pecas/camiseta-marinho-basica.jpg",
-    preco:null, de:null, tamanhos:["P","M","G","GG"], estoque:null, selo:"Novidade" },
-  { nome:"Camiseta lisa",     cat:"Camisetas",  img:"assets/img/pecas/camisetas-cores.jpg",
-    preco:null, de:null, tamanhos:["P","M","G","GG"], estoque:null, selo:null },
-  { nome:"Camiseta bordada",  cat:"Camisetas",  img:"assets/img/pecas/camisetas-neutras.jpg",
-    preco:null, de:null, tamanhos:["M","G","GG"],     estoque:null, selo:null },
-  { nome:"Camiseta recorte",  cat:"Gola Polo",  img:"assets/img/pecas/polo-detalhe.jpg",
-    preco:null, de:null, tamanhos:["P","M","G"],      estoque:null, selo:"Últimas" },
-  { nome:"Camiseta clássica", cat:"Camisetas",  img:"assets/img/pecas/polos-cores.jpg",
-    preco:null, de:null, tamanhos:["P","M","G","GG"], estoque:null, selo:null }
+  { nome:"Camiseta básica",    cat:"Camisetas", img:"assets/img/pecas/camiseta-marinho-basica.jpg",
+    preco:null, de:null, tamanhos:[], estoque:null, selo:null },
+  { nome:"Camiseta lisa",      cat:"Camisetas", img:"assets/img/pecas/camisetas-cores.jpg",
+    preco:null, de:null, tamanhos:[], estoque:null, selo:null },
+  { nome:"Camiseta bordada",   cat:"Camisetas", img:"assets/img/pecas/camisetas-neutras.jpg",
+    preco:null, de:null, tamanhos:[], estoque:null, selo:null },
+  { nome:"Camiseta recorte",   cat:"Gola Polo", img:"assets/img/pecas/polo-detalhe.jpg",
+    preco:null, de:null, tamanhos:[], estoque:null, selo:null },
+  { nome:"Camiseta clássica",  cat:"Camisetas", img:"assets/img/pecas/polos-cores.jpg",
+    preco:null, de:null, tamanhos:[], estoque:null, selo:null }
 ];
 
 /* ========================================================================== */
