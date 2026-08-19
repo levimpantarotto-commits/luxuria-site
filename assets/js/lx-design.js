@@ -191,4 +191,6 @@ function fecharMenu(){
 document.addEventListener("DOMContentLoaded", () => {
   document.getElementById("ano").textContent = new Date().getFullYear();
   montar(); ligarMenu(); rolagem(); revelar(); abertura();
+  /* avisa o preview.js que o motor subiu: sem isso ele revela tudo em 3s */
+  window.__motorPronto = true;
 });

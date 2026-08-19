@@ -3,7 +3,24 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Luxúria Imports · loja</title>
+<title>Luxúria Imports | Moda masculina importada</title>
+<meta name="description" content="Luxúria Imports. Camiseta e boné importados. Você escolhe a peça no site e fecha no WhatsApp.">
+<meta name="theme-color" content="#F4F1EA">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Luxúria Imports | Moda masculina importada">
+<meta property="og:description" content="Camiseta e boné importados. Escolhe a peça e fecha no WhatsApp.">
+<meta property="og:url" content="https://levimpantarotto-commits.github.io/luxuria-site/loja/">
+<meta property="og:site_name" content="Luxúria Imports">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:image" content="https://levimpantarotto-commits.github.io/luxuria-site/assets/img/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="icon" href="../assets/img/favicon-32.png" sizes="32x32">
+<link rel="icon" href="../assets/img/favicon-192.png" sizes="192x192">
+<link rel="apple-touch-icon" href="../assets/img/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
@@ -117,6 +134,9 @@ section{padding:var(--sec) 0}
 .card .valor b{font-family:var(--mono);font-size:17px;font-weight:600;letter-spacing:-.02em}
 .card .valor small{font-family:var(--mono);font-size:10px;color:var(--cinza);letter-spacing:.06em}
 .card .risco{text-decoration:line-through;color:var(--cinza);font-family:var(--mono);font-size:12px}
+.card .avaliar{display:inline-flex;align-items:center;gap:9px;margin-top:11px;border:1px dashed rgba(11,10,9,.32);
+  border-radius:var(--pill);padding:7px 14px;font-family:var(--mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--cinza)}
+.card .avaliar b{font-family:var(--mono);font-size:14px;font-weight:600;letter-spacing:-.01em;color:var(--tinta)}
 
 /* ===== bloco editorial dividido ===== */
 .editorial{display:grid;grid-template-columns:1fr 1fr;gap:0;background:var(--tinta);color:var(--gelo)}
@@ -166,8 +186,8 @@ footer a:hover{color:var(--gelo)}
 
 <div class="aviso">
   <div class="corre">
-    <span><i>Frete</i> em até 48h pra todo o Brasil</span><span><i>3x</i> sem juros no cartão</span><span><i>7 dias</i> pra trocar</span><span><i>Pix</i> com desconto</span>
-    <span><i>Frete</i> em até 48h pra todo o Brasil</span><span><i>3x</i> sem juros no cartão</span><span><i>7 dias</i> pra trocar</span><span><i>Pix</i> com desconto</span>
+    <span><i>Envio</i> para todo o Brasil</span><span><i>Sem cadastro</i> você fecha no zap</span><span><i>Moda masculina</i> importada</span><span><i>Atendimento</i> por pessoa, não por robô</span>
+    <span><i>Envio</i> para todo o Brasil</span><span><i>Sem cadastro</i> você fecha no zap</span><span><i>Moda masculina</i> importada</span><span><i>Atendimento</i> por pessoa, não por robô</span>
   </div>
 </div>
 
@@ -182,8 +202,8 @@ footer a:hover{color:var(--gelo)}
       <input type="search" placeholder="Buscar peça, cor ou tamanho">
     </div>
     <div class="acoes">
-      <a href="#novidades">Novidades</a>
-      <a href="#vendidos">Mais vendidos</a>
+      <a href="#novidades">Vitrine</a>
+      <a href="#vendidos">Tem mais</a>
       <a class="zap-topo" href="https://wa.me/5548000000000" target="_blank" rel="noopener">Falar no zap</a>
     </div>
   </div>
@@ -197,18 +217,17 @@ footer a:hover{color:var(--gelo)}
     <a class="chip" href="#novidades">Bermudas</a>
     <a class="chip" href="#novidades">Bonés</a>
     <a class="chip" href="#novidades">Acessórios</a>
-    <a class="chip" href="#novidades">Kits</a>
-    <a class="chip" href="#novidades">Até R$ 99</a>
+    <a class="chip" href="#novidades">Bermudas</a>
   </div>
 </div>
 
 <section class="hero" style="padding:0">
-  <img src="../assets/img/pecas/polos-cores.jpg" alt="Coleção de polos">
+  <img src="../assets/img/pecas/polos-cores.jpg" alt="Camisetas da Luxúria Imports">
   <div class="hero-txt">
     <div class="wrap">
-      <span class="eti">Coleção masculina · chegou agora</span>
+      <span class="eti">Moda masculina importada</span>
       <h1>Peça boa<br><em>sem pagar grife</em></h1>
-      <p>Camiseta, polo e acessório com caimento de loja cara. Você escolhe aqui e fecha no zap comigo.</p>
+      <p>Você escolhe a peça aqui e fecha comigo no zap. Sem cadastro e sem carrinho.</p>
       <div class="hero-acao">
         <a class="btn btn--cheio" href="#novidades">Ver a coleção</a>
         <a class="btn btn--linha" href="https://wa.me/5548000000000" target="_blank" rel="noopener">Falar no zap</a>
@@ -220,51 +239,44 @@ footer a:hover{color:var(--gelo)}
 <section id="novidades">
   <div class="wrap">
     <div class="cab rv">
-      <div><span class="eti" style="color:var(--cinza);display:block;margin-bottom:10px">01 · Novidades</span><h2>Chegou agora</h2></div>
+      <div><span class="eti" style="color:var(--cinza);display:block;margin-bottom:10px">01 · Vitrine</span><h2>As peças</h2></div>
       <a href="#vendidos">Ver tudo</a>
     </div>
     <div class="grade">
       <article class="card rv">
         <div class="foto">
-          <span class="tag tag--ouro">Últimas</span>
-          <img src="../assets/img/pecas/polo-detalhe.jpg" alt="Polo gola contraste">
-          <div class="rapido"><a href="https://wa.me/5548000000000?text=Oi!%20Quero%20a%20POLO%20GOLA%20CONTRASTE%20(R%24%20129)" target="_blank" rel="noopener">Quero essa</a></div>
+          <img src="../assets/img/pecas/polo-detalhe.jpg" alt="Camiseta com recorte, preta e branca">
+          <div class="rapido"><a href="https://wa.me/5548000000000?text=Oi!%20Vim%20pelo%20site%20e%20quero%20a%20CAMISETA%20COM%20RECORTE" target="_blank" rel="noopener">Quero essa</a></div>
         </div>
-        <p class="nome">Polo gola contraste</p>
-        <div class="cores"><i style="background:#1B2A3D"></i><i style="background:#7A2C2C"></i><i style="background:#2F3A2C"></i></div>
-        <div class="valor"><b>R$ 129</b><small>3x de 43</small></div>
+        <p class="nome">Camiseta com recorte</p>
+        <div class="avaliar"><b>R$ __,__</b><span>preço a definir</span></div>
       </article>
 
       <article class="card rv">
         <div class="foto">
-          <span class="tag">Novo</span>
-          <img src="../assets/img/pecas/camiseta-marinho-basica.jpg" alt="Camiseta marinho">
-          <div class="rapido"><a href="https://wa.me/5548000000000?text=Oi!%20Quero%20a%20CAMISETA%20MARINHO%20(R%24%2079)" target="_blank" rel="noopener">Quero essa</a></div>
+          <img src="../assets/img/pecas/camiseta-marinho-basica.jpg" alt="Camiseta lisa marinho">
+          <div class="rapido"><a href="https://wa.me/5548000000000?text=Oi!%20Vim%20pelo%20site%20e%20quero%20a%20CAMISETA%20LISA%20MARINHO" target="_blank" rel="noopener">Quero essa</a></div>
         </div>
-        <p class="nome">Camiseta marinho</p>
-        <div class="cores"><i style="background:#1B2A3D"></i><i style="background:#0B0A09"></i><i style="background:#D8D2C6"></i></div>
-        <div class="valor"><b>R$ 79</b><small>3x de 27</small></div>
+        <p class="nome">Camiseta lisa marinho</p>
+        <div class="avaliar"><b>R$ __,__</b><span>preço a definir</span></div>
       </article>
 
       <article class="card rv">
         <div class="foto">
-          <span class="tag tag--ouro">Kit</span>
-          <img src="../assets/img/pecas/camisetas-cores.jpg" alt="Kit com 3 camisetas">
-          <div class="rapido"><a href="https://wa.me/5548000000000?text=Oi!%20Quero%20o%20KIT%203%20CAMISETAS%20(R%24%20199)" target="_blank" rel="noopener">Quero esse</a></div>
+          <img src="../assets/img/pecas/camisetas-cores.jpg" alt="Camiseta lisa em várias cores">
+          <div class="rapido"><a href="https://wa.me/5548000000000?text=Oi!%20Vim%20pelo%20site%20e%20quero%20a%20CAMISETA%20LISA%20COLORIDA" target="_blank" rel="noopener">Quero essa</a></div>
         </div>
-        <p class="nome">Kit 3 camisetas</p>
-        <div class="cores"><i style="background:#7A2C2C"></i><i style="background:#2F3A2C"></i><i style="background:#D8D2C6"></i></div>
-        <div class="valor"><b>R$ 199</b><span class="risco">R$ 237</span><small>66 cada</small></div>
+        <p class="nome">Camiseta lisa colorida</p>
+        <div class="avaliar"><b>R$ __,__</b><span>preço a definir</span></div>
       </article>
 
       <article class="card rv">
         <div class="foto">
-          <img src="../assets/img/pecas/polos-cores.jpg" alt="Polo lisa">
-          <div class="rapido"><a href="https://wa.me/5548000000000?text=Oi!%20Quero%20a%20POLO%20LISA%20(R%24%20119)" target="_blank" rel="noopener">Quero essa</a></div>
+          <img src="../assets/img/pecas/polos-cores.jpg" alt="Camiseta gola redonda em várias cores">
+          <div class="rapido"><a href="https://wa.me/5548000000000?text=Oi!%20Vim%20pelo%20site%20e%20quero%20a%20CAMISETA%20GOLA%20REDONDA" target="_blank" rel="noopener">Quero essa</a></div>
         </div>
-        <p class="nome">Polo lisa</p>
-        <div class="cores"><i style="background:#0B0A09"></i><i style="background:#1B2A3D"></i><i style="background:#B8862B"></i></div>
-        <div class="valor"><b>R$ 119</b><small>3x de 40</small></div>
+        <p class="nome">Camiseta gola redonda</p>
+        <div class="avaliar"><b>R$ __,__</b><span>preço a definir</span></div>
       </article>
     </div>
   </div>
@@ -274,7 +286,7 @@ footer a:hover{color:var(--gelo)}
   <div class="lado">
     <span class="eti">Como funciona</span>
     <h2>Escolhe aqui<br>fecha no zap</h2>
-    <p>Toca em "quero essa" e a conversa abre já dizendo qual peça é. Eu confiro estoque na hora, mando foto real e você paga no pix ou em 3x.</p>
+    <p>Toca em "quero essa" e a conversa abre já dizendo qual peça é. Eu confiro tamanho e disponibilidade na hora, e combino com você o pagamento e o envio.</p>
     <div><a class="btn btn--cheio" href="https://wa.me/5548000000000" target="_blank" rel="noopener">Começar a conversa</a></div>
   </div>
   <div class="foto"><img src="../assets/img/pecas/camisetas-neutras.jpg" alt="Camisetas em tons neutros"></div>
@@ -283,50 +295,47 @@ footer a:hover{color:var(--gelo)}
 <section id="vendidos">
   <div class="wrap">
     <div class="cab rv">
-      <div><span class="eti" style="color:var(--cinza);display:block;margin-bottom:10px">02 · Saem mais</span><h2>Mais vendidos</h2></div>
+      <div><span class="eti" style="color:var(--cinza);display:block;margin-bottom:10px">02 · Também na loja</span><h2>Tem mais</h2></div>
       <a href="https://wa.me/5548000000000" target="_blank" rel="noopener">Pedir catálogo</a>
     </div>
     <div class="grade">
       <article class="card rv">
-        <div class="foto"><img src="../assets/img/pecas/camisetas-neutras.jpg" alt="Camiseta tom neutro">
-          <div class="rapido"><a href="https://wa.me/5548000000000?text=Oi!%20Quero%20a%20CAMISETA%20TOM%20NEUTRO%20(R%24%2089)" target="_blank" rel="noopener">Quero essa</a></div></div>
-        <p class="nome">Camiseta tom neutro</p>
-        <div class="cores"><i style="background:#D8D2C6"></i><i style="background:#8A8072"></i></div>
-        <div class="valor"><b>R$ 89</b><small>3x de 30</small></div>
+        <div class="foto"><img src="../assets/img/pecas/camisetas-neutras.jpg" alt="Camiseta com bordado no peito">
+          <div class="rapido"><a href="https://wa.me/5548000000000?text=Oi!%20Vim%20pelo%20site%20e%20quero%20a%20CAMISETA%20BORDADA" target="_blank" rel="noopener">Quero essa</a></div></div>
+        <p class="nome">Camiseta bordada</p>
+        <div class="avaliar"><b>R$ __,__</b><span>preço a definir</span></div>
       </article>
       <article class="card rv">
-        <div class="foto"><span class="tag">2 por R$ 149</span><img src="../assets/img/pecas/camisetas-cores.jpg" alt="Combo camisetas">
-          <div class="rapido"><a href="https://wa.me/5548000000000?text=Oi!%20Quero%20o%20COMBO%202%20CAMISETAS%20(R%24%20149)" target="_blank" rel="noopener">Quero esse</a></div></div>
-        <p class="nome">Combo 2 camisetas</p>
-        <div class="cores"><i style="background:#7A2C2C"></i><i style="background:#1B2A3D"></i></div>
-        <div class="valor"><b>R$ 149</b><small>74 cada</small></div>
+        <div class="foto"><img src="../assets/img/pecas/camisetas-cores.jpg" alt="Camiseta preta com logo no peito">
+          <div class="rapido"><a href="https://wa.me/5548000000000?text=Oi!%20Vim%20pelo%20site%20e%20quero%20a%20CAMISETA%20PRETA" target="_blank" rel="noopener">Quero essa</a></div></div>
+        <p class="nome">Camiseta preta</p>
+        <div class="avaliar"><b>R$ __,__</b><span>preço a definir</span></div>
       </article>
       <article class="card rv">
-        <div class="foto"><img src="../assets/img/pecas/polo-detalhe.jpg" alt="Polo detalhe">
-          <div class="rapido"><a href="https://wa.me/5548000000000?text=Oi!%20Quero%20a%20POLO%20PREMIUM%20(R%24%20139)" target="_blank" rel="noopener">Quero essa</a></div></div>
-        <p class="nome">Polo premium</p>
-        <div class="cores"><i style="background:#2F3A2C"></i><i style="background:#0B0A09"></i></div>
-        <div class="valor"><b>R$ 139</b><small>3x de 46</small></div>
+        <div class="foto"><img src="../assets/img/pecas/polo-detalhe.jpg" alt="Camiseta branca com recorte">
+          <div class="rapido"><a href="https://wa.me/5548000000000?text=Oi!%20Vim%20pelo%20site%20e%20quero%20a%20CAMISETA%20BRANCA%20COM%20RECORTE" target="_blank" rel="noopener">Quero essa</a></div></div>
+        <p class="nome">Camiseta branca com recorte</p>
+        <div class="avaliar"><b>R$ __,__</b><span>preço a definir</span></div>
       </article>
       <article class="card rv" style="display:flex;align-items:center;justify-content:center;text-align:center;border:1px dashed var(--linha);border-radius:var(--r2);padding:30px;min-height:280px">
         <div>
           <span class="eti" style="color:var(--cinza);display:block;margin-bottom:12px">Não achou</span>
           <p class="nome" style="margin:0 0 10px">Me diz o que<br>você procura</p>
-          <p style="font-size:14px;color:var(--cinza);margin-bottom:18px">Chega peça toda semana.</p>
+          <p style="font-size:14px;color:var(--cinza);margin-bottom:18px">Se não estiver na tela, pergunta no zap.</p>
           <a class="btn btn--tinta" href="https://wa.me/5548000000000?text=Oi!%20Procuro%20uma%20pe%C3%A7a%20espec%C3%ADfica" target="_blank" rel="noopener">Perguntar</a>
         </div>
       </article>
     </div>
-    <p class="nota">Valores, nomes e cores são exemplos de layout. Nada aqui é preço confirmado.</p>
+    <p class="nota">Prévia de layout. O preço de cada peça entra no lugar do campo tracejado.</p>
   </div>
 </section>
 
 <div class="conf">
   <div class="wrap">
-    <div><b>48h</b><span>envio pra todo Brasil</span></div>
-    <div><b>7 dias</b><span>pra trocar sem dor</span></div>
-    <div><b>3x</b><span>sem juros no cartão</span></div>
-    <div><b>Pix</b><span>com desconto</span></div>
+    <div><b>Brasil</b><span>envio combinado no zap</span></div>
+    <div><b>Sem cadastro</b><span>fecha direto na conversa</span></div>
+    <div><b>Sem carrinho</b><span>fala com uma pessoa</span></div>
+    <div><b>Importado</b><span>moda masculina</span></div>
   </div>
 </div>
 
@@ -334,9 +343,9 @@ footer a:hover{color:var(--gelo)}
   <div class="wrap" style="max-width:900px">
     <div class="cab rv"><div><span class="eti" style="color:var(--cinza);display:block;margin-bottom:10px">03 · Dúvidas</span><h2>Antes de comprar</h2></div></div>
     <details class="rv" open><summary>Como eu compro</summary><p>Você toca em "quero essa" na peça e o WhatsApp abre com o nome dela já escrito. Eu confirmo estoque, tamanho e cor na hora.</p></details>
-    <details class="rv"><summary>Qual o prazo de entrega</summary><p>Envio em até 48 horas depois do pagamento confirmado, para todo o Brasil, com código de rastreio.</p></details>
-    <details class="rv"><summary>E se não servir</summary><p>Você tem 7 dias para trocar. A peça precisa estar sem uso e com a etiqueta.</p></details>
-    <details class="rv"><summary>Como eu pago</summary><p>Pix com desconto ou cartão em até 3 vezes sem juros.</p></details>
+    <details class="rv"><summary>Qual o prazo de entrega</summary><p>Enviamos para todo o Brasil. O prazo e o frete a gente combina com você na conversa, antes de fechar.</p></details>
+    <details class="rv"><summary>E se não servir</summary><p>Fala com a gente assim que receber que a gente resolve na conversa.</p></details>
+    <details class="rv"><summary>Como eu pago</summary><p>O pagamento é combinado direto na conversa. Nada é cobrado antes de você confirmar.</p></details>
   </div>
 </section>
 
@@ -348,18 +357,18 @@ footer a:hover{color:var(--gelo)}
           <img src="../assets/img/logo-luxuria.jpg" alt="Luxúria Imports" style="width:52px;height:52px">
           <span><b style="color:var(--gelo)">Luxúria</b><small style="color:rgba(237,230,218,.55)">Imports</small></span>
         </div>
-        <p style="color:rgba(237,230,218,.66);font-size:14px;max-width:34ch">Moda masculina importada. Peça selecionada uma a uma, sem etiqueta que triplica o preço.</p>
+        <p style="color:rgba(237,230,218,.66);font-size:14px;max-width:34ch">Moda masculina importada. Você escolhe a peça no site e fecha a compra no WhatsApp.</p>
       </div>
       <div>
         <h4>Loja</h4>
-        <a href="#novidades">Novidades</a><a href="#vendidos">Mais vendidos</a><a href="#novidades">Kits</a><a href="#novidades">Até R$ 99</a>
+        <a href="#novidades">Vitrine</a><a href="#vendidos">Tem mais</a><a href="#faq">Dúvidas</a>
       </div>
       <div>
         <h4>Ajuda</h4>
         <a href="https://wa.me/5548000000000" target="_blank" rel="noopener">Falar no zap</a><a href="#faq">Trocas e devolução</a><a href="#faq">Prazo de entrega</a><a href="#faq">Formas de pagamento</a>
       </div>
     </div>
-    <div class="fim"><span>Luxúria Imports</span><span>Amostra de layout · 17.08.2026</span></div>
+    <div class="fim"><span>Luxúria Imports</span><span>Prévia de layout · 19.08.2026</span></div>
   </div>
 </footer>
 
@@ -387,5 +396,6 @@ footer a:hover{color:var(--gelo)}
   });
 })();
 </script>
+<script src="../assets/js/preview.js?v=2026081901"></script>
 </body>
 </html>

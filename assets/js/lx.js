@@ -36,16 +36,19 @@ const CATEGORIAS = [
    informar. Já preenchi isso com chute uma vez e o Levi pegou (17/08).
    Regra: não inventar dado de cliente, nem "só pra ficar bonito".
    -------------------------------------------------------------------------- */
+/* Nome descreve o que APARECE na foto. Conferido peça por peça em 19/08/2026:
+   nenhuma das 5 fotos é gola polo, as duas que o nome do arquivo chama de
+   "polo" são camiseta de gola redonda. Categoria de todas: Camisetas. */
 const PECAS = [
-  { nome:"Camiseta básica",    cat:"Camisetas", img:"assets/img/pecas/camiseta-marinho-basica.jpg",
+  { nome:"Camiseta lisa marinho",  cat:"Camisetas", img:"assets/img/pecas/camiseta-marinho-basica.jpg",
     preco:null, de:null, tamanhos:[], estoque:null, selo:null },
-  { nome:"Camiseta lisa",      cat:"Camisetas", img:"assets/img/pecas/camisetas-cores.jpg",
+  { nome:"Camiseta lisa colorida", cat:"Camisetas", img:"assets/img/pecas/camisetas-cores.jpg",
     preco:null, de:null, tamanhos:[], estoque:null, selo:null },
-  { nome:"Camiseta bordada",   cat:"Camisetas", img:"assets/img/pecas/camisetas-neutras.jpg",
+  { nome:"Camiseta bordada",       cat:"Camisetas", img:"assets/img/pecas/camisetas-neutras.jpg",
     preco:null, de:null, tamanhos:[], estoque:null, selo:null },
-  { nome:"Camiseta recorte",   cat:"Gola Polo", img:"assets/img/pecas/polo-detalhe.jpg",
+  { nome:"Camiseta com recorte",   cat:"Camisetas", img:"assets/img/pecas/polo-detalhe.jpg",
     preco:null, de:null, tamanhos:[], estoque:null, selo:null },
-  { nome:"Camiseta clássica",  cat:"Camisetas", img:"assets/img/pecas/polos-cores.jpg",
+  { nome:"Camiseta gola redonda",  cat:"Camisetas", img:"assets/img/pecas/polos-cores.jpg",
     preco:null, de:null, tamanhos:[], estoque:null, selo:null }
 ];
 
@@ -321,4 +324,6 @@ document.addEventListener("DOMContentLoaded", () => {
   ligarRolagem();
   ligarRevelacoes();
   abertura();
+  /* avisa o preview.js que o motor subiu: sem isso ele revela tudo em 3s */
+  window.__motorPronto = true;
 });

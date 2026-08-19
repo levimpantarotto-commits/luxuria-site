@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Luxúria Imports | Escolha da versão do site</title>
+<meta name="description" content="Quatro versões do site da Luxúria Imports para escolher. Abra cada uma no celular e diga qual fica.">
+<meta name="theme-color" content="#080707">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Luxúria Imports | Escolha da versão do site">
+<meta property="og:description" content="Quatro versões para escolher. Abra cada uma e diga qual fica.">
+<meta property="og:url" content="https://levimpantarotto-commits.github.io/luxuria-site/versoes.html">
+<meta property="og:site_name" content="Luxúria Imports">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:image" content="https://levimpantarotto-commits.github.io/luxuria-site/assets/img/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="icon" href="assets/img/favicon-32.png" sizes="32x32">
+<link rel="icon" href="assets/img/favicon-192.png" sizes="192x192">
+<link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@75..100,400..900&family=Barlow+Condensed:wght@700;800&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --preto:#080707;
+  --carvao:#131110;
+  --carvao-2:#1B1917;
+  --gelo:#EDE6DA;
+  --gelo-70:rgba(237,230,218,.70);
+  --gelo-40:rgba(237,230,218,.40);
+  --ouro-fundo:#6B4A12;
+  --ouro:#B8862B;
+  --ouro-claro:#EBC96E;
+  --borda:rgba(184,134,43,.26);
+  --display:"Archivo","Arial Narrow",sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,monospace;
+  --ease:cubic-bezier(.22,1,.36,1);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{
+  background:var(--preto);color:var(--gelo);
+  font-family:var(--display);font-size:clamp(15px,.4vw + 14px,16.5px);line-height:1.6;
+  font-variation-settings:"wdth" 100;
+  overflow-x:hidden;
+}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+.wrap{width:min(1180px,90vw);margin:0 auto}
+
+/* ====== brilho de fundo, uma fonte de luz só ====== */
+.luz{
+  position:fixed;inset:0;z-index:0;pointer-events:none;
+  background:radial-gradient(58vw 42vw at 50% -8%, rgba(184,134,43,.20), transparent 62%);
+}
+main{position:relative;z-index:1}
+
+/* ====== topo ====== */
+.topo{padding:clamp(48px,9vw,104px) 0 clamp(36px,6vw,64px);text-align:center}
+.brasao{
+  width:clamp(118px,23vw,168px);height:auto;margin:0 auto clamp(22px,4vw,32px);
+  /* a arte da logo é um JPG de fundo preto: em vez de tentar dissolver o
+     quadrado, ele vira selo, com borda dourada e brilho por baixo */
+  border-radius:12px;border:1px solid rgba(184,134,43,.42);
+  box-shadow:0 0 0 6px rgba(184,134,43,.06), 0 24px 60px -26px rgba(184,134,43,.55);
+  opacity:0;transform:scale(1.22);filter:blur(20px);
+}
+.eti{
+  display:inline-block;font-family:var(--mono);font-size:11px;letter-spacing:.22em;
+  text-transform:uppercase;color:var(--ouro-claro);margin-bottom:18px;
+}
+h1{
+  font-size:clamp(34px,6.6vw,68px);font-weight:900;line-height:1.02;letter-spacing:-.022em;
+  font-variation-settings:"wdth" 88;text-transform:uppercase;
+}
+h1 em{font-style:normal;color:var(--ouro-claro)}
+.topo p{
+  max-width:56ch;margin:20px auto 0;color:var(--gelo-70);
+  font-size:clamp(15px,1.5vw,17.5px);
+}
+
+/* ====== grade das versões ====== */
+.versoes{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,290px),1fr));
+  gap:clamp(18px,2.4vw,26px);padding-bottom:clamp(56px,9vw,120px);
+}
+.cartao{
+  position:relative;display:flex;flex-direction:column;
+  background:var(--carvao);border:1px solid var(--borda);border-radius:14px;overflow:hidden;
+  transition:transform .5s var(--ease),border-color .35s,box-shadow .5s var(--ease);
+  opacity:0;transform:translateY(46px) scale(.94);filter:blur(10px);
+}
+.cartao:hover{transform:translateY(-6px);border-color:rgba(235,201,110,.55);box-shadow:0 26px 60px -30px rgba(0,0,0,.9)}
+.cartao:active{transform:translateY(-1px)}
+
+/* a amostra é montada em CSS com a paleta e a fonte reais de cada versão */
+.amostra{position:relative;height:190px;overflow:hidden;display:flex;align-items:flex-end;padding:16px}
+.amostra .foto{position:absolute;inset:0}
+.amostra .foto img{width:100%;height:100%;object-fit:cover}
+.amostra .miolo{position:relative;z-index:2;width:100%}
+.amostra .titulinho{
+  font-weight:900;line-height:.92;letter-spacing:-.02em;text-transform:uppercase;
+  font-size:26px;font-variation-settings:"wdth" 80;
+}
+.amostra .linhinha{
+  display:inline-block;margin-top:8px;font-family:var(--mono);font-size:9.5px;
+  letter-spacing:.18em;text-transform:uppercase;padding:5px 10px;border-radius:999px;
+}
+
+/* variação A: clara */
+.a-clara .foto::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(255,255,255,.30),rgba(255,255,255,.95) 62%)}
+.a-clara .titulinho{color:#0D0D0D}
+.a-clara .linhinha{background:#0D0D0D;color:#fff}
+/* variação B: escura */
+.a-escura .foto img{opacity:.55}
+.a-escura .foto::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(11,10,10,.35),rgba(11,10,10,.93) 66%)}
+.a-escura .titulinho{color:var(--gelo)}
+.a-escura .titulinho span{color:var(--ouro-claro)}
+.a-escura .linhinha{background:var(--ouro);color:#0D0D0D}
+/* variação C: editorial */
+.a-editorial .foto::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(244,241,234,.10),rgba(244,241,234,.94) 60%)}
+.a-editorial .titulinho{color:#0B0A09;font-family:"Barlow Condensed",Impact,sans-serif;font-size:34px;letter-spacing:0}
+.a-editorial .linhinha{background:#0B0A09;color:#F4F1EA}
+/* variação D: loja */
+.a-loja .foto::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(11,10,9,.90),rgba(11,10,9,.28) 78%)}
+.a-loja .titulinho{color:#F4F1EA;font-family:"Barlow Condensed",Impact,sans-serif;font-size:34px;letter-spacing:0}
+.a-loja .titulinho span{color:#D9A94A}
+.a-loja .linhinha{background:#D9A94A;color:#0B0A09}
+
+.corpo{padding:22px 22px 24px;display:flex;flex-direction:column;flex:1;gap:12px}
+.numero{
+  font-family:var(--mono);font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--ouro);
+}
+.cartao h2{
+  font-size:23px;font-weight:800;line-height:1.1;letter-spacing:-.015em;
+  font-variation-settings:"wdth" 92;
+}
+.cartao p{color:var(--gelo-70);font-size:14.5px;line-height:1.58;flex:1}
+.abrir{
+  display:inline-flex;align-items:center;justify-content:center;gap:9px;
+  margin-top:4px;padding:14px 20px;border-radius:999px;
+  background:linear-gradient(140deg,var(--ouro-fundo),var(--ouro) 58%,var(--ouro-claro));
+  color:#0D0D0D;font-weight:800;font-size:13.5px;letter-spacing:.06em;text-transform:uppercase;
+  transition:filter .25s,transform .12s;
+}
+.abrir:hover{filter:brightness(1.12)}
+.abrir:active{transform:translateY(2px)}
+.abrir svg{width:15px;height:15px;fill:none;stroke:currentColor;stroke-width:2.1;stroke-linecap:round;stroke-linejoin:round}
+
+/* ====== o que falta ====== */
+.falta{border-top:1px solid var(--borda);background:var(--carvao-2);padding:clamp(48px,8vw,96px) 0}
+.falta h2{
+  font-size:clamp(26px,4.4vw,42px);font-weight:900;letter-spacing:-.02em;line-height:1.06;
+  text-transform:uppercase;font-variation-settings:"wdth" 86;
+}
+.falta > .wrap > p{max-width:58ch;margin-top:16px;color:var(--gelo-70)}
+.itens{list-style:none;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,250px),1fr));gap:16px;margin-top:34px}
+.itens li{
+  background:var(--preto);border:1px solid var(--borda);border-radius:12px;padding:20px;
+  opacity:0;transform:translateY(30px);
+}
+.itens strong{display:block;font-size:16px;font-weight:800;letter-spacing:-.01em;margin-bottom:7px}
+.itens span{display:block;color:var(--gelo-70);font-size:14px;line-height:1.55}
+
+/* ====== rodapé ====== */
+.pe{padding:34px 0 46px;text-align:center;color:var(--gelo-40);font-size:13px}
+.pe a{color:var(--ouro-claro)}
+
+@media (max-width:560px){
+  .amostra{height:164px}
+  .corpo{padding:20px 18px 22px}
+}
+</style>
+</head>
+<body>
+
+<div class="luz" aria-hidden="true"></div>
+
+<main>
+
+<header class="topo">
+  <div class="wrap">
+    <img class="brasao" id="brasao" src="assets/img/logo-luxuria.jpg" alt="Luxúria Imports">
+    <p class="eti">Luxúria Imports</p>
+    <h1>Quatro caminhos<br>para o <em>mesmo site</em></h1>
+    <p>
+      O conteúdo é o mesmo nas quatro. O que muda é o jeito de mostrar a peça.
+      Abre cada uma no celular, vê qual combina mais com a loja e me diz o número.
+    </p>
+  </div>
+</header>
+
+<div class="wrap">
+  <div class="versoes">
+
+    <article class="cartao">
+      <div class="amostra a-clara">
+        <div class="foto"><img src="assets/img/pecas/camisetas-cores.jpg" alt=""></div>
+        <div class="miolo">
+          <p class="titulinho">Camiseta de<br>marca na faixa</p>
+          <span class="linhinha">Fundo claro</span>
+        </div>
+      </div>
+      <div class="corpo">
+        <span class="numero">Versão 1</span>
+        <h2>Clara</h2>
+        <p>
+          Fundo branco, letra pesada e foto grande. É o padrão das lojas do mesmo
+          público que eu medi antes de desenhar. A leitura no celular é a mais fácil das quatro.
+        </p>
+        <a class="abrir" href="index.html">
+          Abrir a versão 1
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+      </div>
+    </article>
+
+    <article class="cartao">
+      <div class="amostra a-escura">
+        <div class="foto"><img src="assets/img/pecas/camiseta-marinho-basica.jpg" alt=""></div>
+        <div class="miolo">
+          <p class="titulinho">Camiseta de<br><span>marca</span> na faixa</p>
+          <span class="linhinha">Preto e dourado</span>
+        </div>
+      </div>
+      <div class="corpo">
+        <span class="numero">Versão 2</span>
+        <h2>Escura</h2>
+        <p>
+          Mesmo desenho da versão 1, com o preto e o dourado da sua logo tomando conta
+          da página. A peça aparece iluminada no escuro, como vitrine à noite.
+        </p>
+        <a class="abrir" href="escuro.html">
+          Abrir a versão 2
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+      </div>
+    </article>
+
+    <article class="cartao">
+      <div class="amostra a-editorial">
+        <div class="foto"><img src="assets/img/pecas/polo-detalhe.jpg" alt=""></div>
+        <div class="miolo">
+          <p class="titulinho">Grife no peito</p>
+          <span class="linhinha">Uma peça por vez</span>
+        </div>
+      </div>
+      <div class="corpo">
+        <span class="numero">Versão 3</span>
+        <h2>Uma peça por vez</h2>
+        <p>
+          Aqui a página abre com uma foto só, do tamanho da tela, e o resto vem depois.
+          Serve bem quando a peça em destaque muda toda semana.
+        </p>
+        <a class="abrir" href="design.html">
+          Abrir a versão 3
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+      </div>
+    </article>
+
+    <article class="cartao">
+      <div class="amostra a-loja">
+        <div class="foto"><img src="assets/img/pecas/polos-cores.jpg" alt=""></div>
+        <div class="miolo">
+          <p class="titulinho">Peça boa<br><span>sem pagar grife</span></p>
+          <span class="linhinha">Cara de loja</span>
+        </div>
+      </div>
+      <div class="corpo">
+        <span class="numero">Versão 4</span>
+        <h2>Cara de loja</h2>
+        <p>
+          Esta tem busca no topo, filtro por categoria e a grade cheia de peças, igual
+          às lojas grandes. A compra continua fechando no WhatsApp, sem carrinho.
+        </p>
+        <a class="abrir" href="loja/">
+          Abrir a versão 4
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+      </div>
+    </article>
+
+  </div>
+</div>
+
+<section class="falta">
+  <div class="wrap">
+    <h2>O que eu ainda<br>preciso de você</h2>
+    <p>
+      As quatro versões estão prontas por dentro. O que falta é dado da loja, e é rápido:
+      me manda por áudio mesmo, que eu preencho.
+    </p>
+    <ul class="itens">
+      <li>
+        <strong>O número da loja</strong>
+        <span>É o que faz cada botão abrir a conversa já dizendo qual peça a pessoa quer. Hoje está com um número de teste.</span>
+      </li>
+      <li>
+        <strong>O preço de cada peça</strong>
+        <span>Onde está o campo tracejado entra o valor. Quem compra nesse preço decide olhando o número, então esconder atrapalha.</span>
+      </li>
+      <li>
+        <strong>O que a loja vende de verdade</strong>
+        <span>As categorias que estão no ar vieram do site que você me mandou de referência, não de você. Diz o que fica e o que sai.</span>
+      </li>
+      <li>
+        <strong>Foto das peças suas</strong>
+        <span>As de agora são as que você mandou, do fornecedor. Foto sua, da peça em mãos, vende mais que catálogo.</span>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<footer class="pe">
+  <div class="wrap">
+    Luxúria Imports · prévia de <span id="data"></span><br>
+    Site por <a href="https://levimp.com.br" target="_blank" rel="noopener">LMP</a>
+  </div>
+</footer>
+
+</main>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script>
+(function(){
+  var d = new Date();
+  document.getElementById("data").textContent =
+    String(d.getDate()).padStart(2,"0") + "/" + String(d.getMonth()+1).padStart(2,"0") + "/" + d.getFullYear();
+
+  /* Sem GSAP a página tem que aparecer inteira mesmo assim. */
+  if(!window.gsap){
+    document.getElementById("brasao").style.cssText += ";opacity:1;transform:none;filter:none";
+    [].forEach.call(document.querySelectorAll(".cartao,.itens li"), function(e){
+      e.style.opacity = 1; e.style.transform = "none"; e.style.filter = "none";
+    });
+    return;
+  }
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  gsap.timeline()
+    .to("#brasao", { opacity:1, scale:1, filter:"blur(0px)", duration:1.5, ease:"expo.out" })
+    .fromTo(".eti", { opacity:0, y:16 }, { opacity:1, y:0, duration:.6, ease:"expo.out" }, "-=1.0")
+    .fromTo("h1", { opacity:0, y:30, filter:"blur(14px)" },
+                  { opacity:1, y:0, filter:"blur(0px)", duration:1.1, ease:"expo.out" }, "-=.75")
+    .fromTo(".topo p", { opacity:0, y:22 }, { opacity:1, y:0, duration:.7, ease:"expo.out" }, "-=.7");
+
+  gsap.to(".cartao", {
+    opacity:1, y:0, scale:1, filter:"blur(0px)",
+    duration:1.05, ease:"expo.out", stagger:.13,
+    scrollTrigger:{ trigger:".versoes", start:"top 86%" }
+  });
+
+  gsap.to(".itens li", {
+    opacity:1, y:0, duration:.75, ease:"expo.out", stagger:.09,
+    scrollTrigger:{ trigger:".itens", start:"top 88%" }
+  });
+
+  window.__motorPronto = true;
+})();
+
+/* Rede de segurança: se o GSAP carregar mas este bloco falhar, a página
+   apareceria vazia. Passados 3 segundos sem o motor ter subido, revela tudo. */
+setTimeout(function(){
+  if (window.__motorPronto) return;
+  document.getElementById("brasao").style.cssText += ";opacity:1;transform:none;filter:none";
+  [].forEach.call(document.querySelectorAll(".cartao,.itens li,.eti,h1,.topo p"), function(e){
+    e.style.opacity = 1; e.style.transform = "none"; e.style.filter = "none";
+  });
+}, 3000);
+</script>
+</body>
+</html>
