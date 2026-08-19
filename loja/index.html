@@ -134,9 +134,14 @@ section{padding:var(--sec) 0}
 .card .valor b{font-family:var(--mono);font-size:17px;font-weight:600;letter-spacing:-.02em}
 .card .valor small{font-family:var(--mono);font-size:10px;color:var(--cinza);letter-spacing:.06em}
 .card .risco{text-decoration:line-through;color:var(--cinza);font-family:var(--mono);font-size:12px}
-.card .avaliar{display:inline-flex;align-items:center;gap:9px;margin-top:11px;border:1px dashed rgba(11,10,9,.32);
-  border-radius:var(--pill);padding:7px 14px;font-family:var(--mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--cinza)}
-.card .avaliar b{font-family:var(--mono);font-size:14px;font-weight:600;letter-spacing:-.01em;color:var(--tinta)}
+/* onde o preco vai morar quando a loja definir: rotulo em cima, campo em baixo.
+   Nao pode ser pilula: em card de 167px o "R$ __,__" quebrava no meio. */
+.card .avaliar{display:block;margin-top:11px}
+.card .avaliar span{display:block;font-family:var(--mono);font-size:9.5px;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--cinza);margin-bottom:4px;white-space:nowrap}
+.card .avaliar b{display:inline-block;font-family:var(--mono);font-size:17px;font-weight:600;
+  letter-spacing:-.01em;color:var(--tinta);white-space:nowrap;
+  border-bottom:1px dashed rgba(11,10,9,.38);padding-bottom:3px}
 
 /* ===== bloco editorial dividido ===== */
 .editorial{display:grid;grid-template-columns:1fr 1fr;gap:0;background:var(--tinta);color:var(--gelo)}
@@ -249,7 +254,7 @@ footer a:hover{color:var(--gelo)}
           <div class="rapido"><a href="https://wa.me/5548000000000?text=Oi!%20Vim%20pelo%20site%20e%20quero%20a%20CAMISETA%20COM%20RECORTE" target="_blank" rel="noopener">Quero essa</a></div>
         </div>
         <p class="nome">Camiseta com recorte</p>
-        <div class="avaliar"><b>R$ __,__</b><span>preço a definir</span></div>
+        <div class="avaliar"><span>preço a definir</span><b>R$ __,__</b></div>
       </article>
 
       <article class="card rv">
@@ -258,7 +263,7 @@ footer a:hover{color:var(--gelo)}
           <div class="rapido"><a href="https://wa.me/5548000000000?text=Oi!%20Vim%20pelo%20site%20e%20quero%20a%20CAMISETA%20LISA%20MARINHO" target="_blank" rel="noopener">Quero essa</a></div>
         </div>
         <p class="nome">Camiseta lisa marinho</p>
-        <div class="avaliar"><b>R$ __,__</b><span>preço a definir</span></div>
+        <div class="avaliar"><span>preço a definir</span><b>R$ __,__</b></div>
       </article>
 
       <article class="card rv">
@@ -267,7 +272,7 @@ footer a:hover{color:var(--gelo)}
           <div class="rapido"><a href="https://wa.me/5548000000000?text=Oi!%20Vim%20pelo%20site%20e%20quero%20a%20CAMISETA%20LISA%20COLORIDA" target="_blank" rel="noopener">Quero essa</a></div>
         </div>
         <p class="nome">Camiseta lisa colorida</p>
-        <div class="avaliar"><b>R$ __,__</b><span>preço a definir</span></div>
+        <div class="avaliar"><span>preço a definir</span><b>R$ __,__</b></div>
       </article>
 
       <article class="card rv">
@@ -276,7 +281,7 @@ footer a:hover{color:var(--gelo)}
           <div class="rapido"><a href="https://wa.me/5548000000000?text=Oi!%20Vim%20pelo%20site%20e%20quero%20a%20CAMISETA%20GOLA%20REDONDA" target="_blank" rel="noopener">Quero essa</a></div>
         </div>
         <p class="nome">Camiseta gola redonda</p>
-        <div class="avaliar"><b>R$ __,__</b><span>preço a definir</span></div>
+        <div class="avaliar"><span>preço a definir</span><b>R$ __,__</b></div>
       </article>
     </div>
   </div>
@@ -303,19 +308,19 @@ footer a:hover{color:var(--gelo)}
         <div class="foto"><img src="../assets/img/pecas/camisetas-neutras.jpg" alt="Camiseta com bordado no peito">
           <div class="rapido"><a href="https://wa.me/5548000000000?text=Oi!%20Vim%20pelo%20site%20e%20quero%20a%20CAMISETA%20BORDADA" target="_blank" rel="noopener">Quero essa</a></div></div>
         <p class="nome">Camiseta bordada</p>
-        <div class="avaliar"><b>R$ __,__</b><span>preço a definir</span></div>
+        <div class="avaliar"><span>preço a definir</span><b>R$ __,__</b></div>
       </article>
       <article class="card rv">
         <div class="foto"><img src="../assets/img/pecas/camisetas-cores.jpg" alt="Camiseta preta com logo no peito">
           <div class="rapido"><a href="https://wa.me/5548000000000?text=Oi!%20Vim%20pelo%20site%20e%20quero%20a%20CAMISETA%20PRETA" target="_blank" rel="noopener">Quero essa</a></div></div>
         <p class="nome">Camiseta preta</p>
-        <div class="avaliar"><b>R$ __,__</b><span>preço a definir</span></div>
+        <div class="avaliar"><span>preço a definir</span><b>R$ __,__</b></div>
       </article>
       <article class="card rv">
         <div class="foto"><img src="../assets/img/pecas/polo-detalhe.jpg" alt="Camiseta branca com recorte">
           <div class="rapido"><a href="https://wa.me/5548000000000?text=Oi!%20Vim%20pelo%20site%20e%20quero%20a%20CAMISETA%20BRANCA%20COM%20RECORTE" target="_blank" rel="noopener">Quero essa</a></div></div>
         <p class="nome">Camiseta branca com recorte</p>
-        <div class="avaliar"><b>R$ __,__</b><span>preço a definir</span></div>
+        <div class="avaliar"><span>preço a definir</span><b>R$ __,__</b></div>
       </article>
       <article class="card rv" style="display:flex;align-items:center;justify-content:center;text-align:center;border:1px dashed var(--linha);border-radius:var(--r2);padding:30px;min-height:280px">
         <div>
