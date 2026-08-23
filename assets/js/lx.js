@@ -20,8 +20,7 @@ const CONFIG = {
    Tirar o que a Luxúria não tiver antes de publicar pra valer.
    -------------------------------------------------------------------------- */
 const CATEGORIAS = [
-  "Camisetas", "Gola Polo", "Oversized", "Conjuntos",
-  "Bermudas", "Calças", "Bonés", "Tênis"
+  "Conjuntos", "Camisetas"
 ];
 
 /* --------------------------------------------------------------------------
@@ -40,16 +39,28 @@ const CATEGORIAS = [
    nenhuma das 5 fotos é gola polo, as duas que o nome do arquivo chama de
    "polo" são camiseta de gola redonda. Categoria de todas: Camisetas. */
 const PECAS = [
-  { nome:"Camiseta lisa marinho",  cat:"Camisetas", img:"assets/img/pecas/camiseta-marinho-basica.jpg",
+  { nome:"Conjunto moletom cinza escuro", cat:"Conjuntos", img:"assets/img/pecas/m-conjunto-cinza-escuro.jpg",
     preco:null, de:null, tamanhos:[], estoque:null, selo:null },
-  { nome:"Camiseta lisa colorida", cat:"Camisetas", img:"assets/img/pecas/camisetas-cores.jpg",
+  { nome:"Moletom preto e branco",        cat:"Conjuntos", img:"assets/img/pecas/m-moletom-preto-branco.jpg",
     preco:null, de:null, tamanhos:[], estoque:null, selo:null },
-  { nome:"Camiseta bordada",       cat:"Camisetas", img:"assets/img/pecas/camisetas-neutras.jpg",
+  { nome:"Conjunto moletom cinza claro",  cat:"Conjuntos", img:"assets/img/pecas/m-conjunto-cinza-claro.jpg",
     preco:null, de:null, tamanhos:[], estoque:null, selo:null },
-  { nome:"Camiseta com recorte",   cat:"Camisetas", img:"assets/img/pecas/polo-detalhe.jpg",
+  { nome:"Conjunto branco",               cat:"Conjuntos", img:"assets/img/pecas/m-conjunto-branco.jpg",
     preco:null, de:null, tamanhos:[], estoque:null, selo:null },
-  { nome:"Camiseta gola redonda",  cat:"Camisetas", img:"assets/img/pecas/polos-cores.jpg",
-    preco:null, de:null, tamanhos:[], estoque:null, selo:null }
+  { nome:"Conjunto azul",                 cat:"Conjuntos", img:"assets/img/pecas/m-conjunto-azul.jpg",
+    preco:null, de:null, tamanhos:[], estoque:null, selo:null },
+  { nome:"Conjunto preto com detalhe",    cat:"Conjuntos", img:"assets/img/pecas/m-conjunto-preto-detalhe.jpg",
+    preco:null, de:null, tamanhos:[], estoque:null, selo:null },
+  { nome:"Moletom preto e azul",          cat:"Conjuntos", img:"assets/img/pecas/m-moletom-preto-azul.jpg",
+    preco:null, de:null, tamanhos:[], estoque:null, selo:null },
+  { nome:"Conjunto branco e azul",        cat:"Conjuntos", img:"assets/img/pecas/m-conjunto-branco-azul.jpg",
+    preco:null, de:null, tamanhos:[], estoque:null, selo:null },
+  { nome:"Conjunto azul claro",           cat:"Conjuntos", img:"assets/img/pecas/m-conjunto-azul-claro.jpg",
+    preco:null, de:null, tamanhos:[], estoque:null, selo:null },
+  { nome:"Conjunto branco e preto",       cat:"Conjuntos", img:"assets/img/pecas/m-conjunto-branco-preto.jpg",
+    preco:null, de:null, tamanhos:[], estoque:null, selo:null },
+  { nome:"Camiseta peruana original",     cat:"Camisetas", img:"assets/img/pecas/m-camisetas-peruanas.jpg",
+    preco:100.00, de:null, tamanhos:[], estoque:null, selo:null }
 ];
 
 /* ========================================================================== */
