@@ -9,8 +9,8 @@
    ========================================================================== */
 
 const CONFIG = {
-  // TODO CONFIRMAR com a Paola. Enquanto for este número, NENHUM link funciona.
-  whatsapp: "5548000000000",
+  // Número confirmado pela Paola na conversa usada para o atendimento da loja.
+  whatsapp: "5548999029876",
   saudacao: "Fala! Vim pelo site da Luxúria e queria ver as peças."
 };
 

@@ -1,15 +1,14 @@
 /* ==========================================================================
    LUXÚRIA IMPORTS — comportamento (v4)
    ==========================================================================
-   >>> EDITAR ANTES DE PUBLICAR:
-       1. CONFIG.whatsapp — número comercial da loja
-       2. CATEGORIAS[]    — o que a Luxúria realmente vende (A CONFIRMAR)
-       3. PECAS[]         — nome, PREÇO, tamanhos, estoque e foto de cada peça
+   >>> EDITAR AO ATUALIZAR A LOJA:
+       1. CATEGORIAS[] — o que a Luxúria realmente vende
+       2. PECAS[] — nome, PREÇO, tamanhos, estoque e foto de cada peça
    ========================================================================== */
 
 const CONFIG = {
-  // TODO CONFIRMAR: número comercial da Luxúria, formato 55DDNNNNNNNNN
-  whatsapp: "5548000000000",
+  // Número confirmado pela Paola na conversa usada para o atendimento da loja.
+  whatsapp: "5548999029876",
   saudacao: "Fala! Vim pelo site da Luxúria e queria ver as peças.",
   parcelas: 3   // em quantas vezes o cartão divide, para o "3x de R$X"
 };
